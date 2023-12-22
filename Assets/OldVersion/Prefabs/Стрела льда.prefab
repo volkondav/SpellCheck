@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6428132729465034032}
   - component: {fileID: 6697770215538494845}
   - component: {fileID: 6186928959245815824}
+  - component: {fileID: 7740017029080307850}
   - component: {fileID: 7787625273335005328}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: "\u0421\u0442\u0440\u0435\u043B\u0430 \u043B\u044C\u0434\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 826501355
-  m_SortingLayer: 0
+  m_SortingLayerID: 230078199
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1083675962, guid: 19d9d3de286b0884ba33dc49a09cf190, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -156,6 +157,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7740017029080307850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8495114357828643257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d2518be08077445b622645c4394fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpellSpeed: 8
 --- !u!114 &7787625273335005328
 MonoBehaviour:
   m_ObjectHideFlags: 0
