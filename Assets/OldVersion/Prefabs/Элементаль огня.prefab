@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 626536018497114571}
   - component: {fileID: 632835974900545507}
   - component: {fileID: 4294726454543072243}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 230078199
-  m_SortingLayer: 3
+  m_SortingLayerID: 826501355
+  m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.5882353, g: 0.19866392, b: 0.15294118, a: 0.2509804}
@@ -135,8 +135,7 @@ GameObject:
   - component: {fileID: 7019474126683511658}
   - component: {fileID: 8283309574972574986}
   - component: {fileID: 7606698882271301028}
-  - component: {fileID: 710597870763690356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u0430\u043B\u044C \u043E\u0433\u043D\u044F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,8 +196,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 230078199
-  m_SortingLayer: 3
+  m_SortingLayerID: 826501355
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 009a4d78643df95438f7c3d5ea3bbcd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -258,18 +257,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &710597870763690356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6762728872827118846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e20796851a8c14c938a80ae5758dd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpellSpeed: 2
-  ExplosionTime: 2
-  Explosion: {fileID: 0}
