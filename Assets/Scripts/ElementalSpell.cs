@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Элементаль : MonoBehaviour
+public class ElementalSpell : Spell
 {
-    [SerializeField] private float SpellSpeed;
-    [SerializeField] private float ExplosionTime;
+    [SerializeField] private ScriptableElementalSpell _spellAttribute;
+    private float _spellSpeed;
+    private float _explosionTime;
+
     private Transform Explosion;
     private Rigidbody2D spellBody;
     private float spellXPosition;
@@ -14,14 +15,16 @@ public class Элементаль : MonoBehaviour
     void Awake(){
         spellBody = GetComponent<Rigidbody2D>();
         Explosion = this.gameObject.transform.GetChild(0);
+
+        damage = _spellAttribute.damage;
+        _spellSpeed = _spellAttribute.spellSpeed;
+        _explosionTime = _spellAttribute.explosionTime;
     }
     void Start()
     {
-        spellBody.velocity = new Vector2(SpellSpeed,0);
-        
+        spellBody.velocity = new Vector2(_spellSpeed,0);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         spellXPosition = transform.position.x;
@@ -35,7 +38,7 @@ public class Элементаль : MonoBehaviour
         // print("entered");
         spellBody.velocity = new Vector2(0,0);
         Explosion.gameObject.SetActive(true);
-        yield return new WaitForSeconds(ExplosionTime);
+        yield return new WaitForSeconds(_explosionTime);
         Destroy(gameObject);
     }
 }

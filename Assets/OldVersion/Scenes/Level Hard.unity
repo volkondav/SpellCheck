@@ -4371,6 +4371,7 @@ GameObject:
   - component: {fileID: 6614607638853769009}
   - component: {fileID: 826310829950587911}
   - component: {fileID: 8166556172660921580}
+  - component: {fileID: 8750921824313583366}
   m_Layer: 0
   m_Name: Enemy Hard
   m_TagString: Player
@@ -4656,6 +4657,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8750921824313583366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891467899112438527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94648c6db3a8619458f716bcbf7f2678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthText: {fileID: 5775283429609244601}
+  _currentHealth: 10
 --- !u!1 &8820357195040225813
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,5 +4827,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94648c6db3a8619458f716bcbf7f2678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 2220938861262443669}
-  currentHealth: 100
+  _healthText: {fileID: 2220938861262443669}
+  _currentHealth: 100

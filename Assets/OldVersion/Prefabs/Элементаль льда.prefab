@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7615961121551072072}
   - component: {fileID: 7331168750260692792}
   - component: {fileID: 6405386370978082039}
+  - component: {fileID: 5561985156926706520}
   m_Layer: 0
   m_Name: Ice Explosion
   m_TagString: Untagged
@@ -123,6 +124,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5561985156926706520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695090702469681391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5933284243161230812
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +283,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e20796851a8c14c938a80ae5758dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpellSpeed: 3
-  ExplosionTime: 4
-  Explosion: {fileID: 0}
+  damage: 0
+  _spellAttribute: {fileID: 11400000, guid: bcec99a5878a1f347915d2eb66d4755a, type: 2}

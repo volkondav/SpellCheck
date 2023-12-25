@@ -1,25 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class Стрела : MonoBehaviour
+public class ArrowSpell : Spell
 {
-    [SerializeField] private float SpellSpeed;
+    [SerializeField] private ScriptableArrowSpell _spellAttribute;
+    private float _spellSpeed;
     private Rigidbody2D spellBody;
     private float spellXPosition;
 
-    // Start is called before the first frame update
-    void Awake(){
+    void Awake()
+    {
         spellBody = GetComponent<Rigidbody2D>();
-
+        _spellSpeed = _spellAttribute.spellSpeed;
+        damage = _spellAttribute.damage;
     }
     void Start()
     {
-        spellBody.velocity = new Vector2(SpellSpeed,0);
+        spellBody.velocity = new Vector2(_spellSpeed, 0);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         spellXPosition = transform.position.x;
