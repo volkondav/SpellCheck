@@ -3044,6 +3044,7 @@ GameObject:
   - component: {fileID: 9047166618331342062}
   - component: {fileID: 9047166618331342063}
   - component: {fileID: 9047166618331342064}
+  - component: {fileID: 9047166618331342065}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4829,3 +4830,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthText: {fileID: 2220938861262443669}
   _currentHealth: 100
+--- !u!114 &9047166618331342065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427178551944807160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e3f393718a3f5478e2f649dba172a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellsDictionary: {fileID: 11400000, guid: 93bceadc79d0acd43ba38b1dc79a8c22, type: 2}
