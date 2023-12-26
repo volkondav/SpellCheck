@@ -11,9 +11,9 @@ public class DamageEffect : MonoBehaviour
 
     private void DealDamage(Collider2D targetCollider, int damage)
     {
-        if (targetCollider.TryGetComponent<Health>(out Health health))
+        if (targetCollider.TryGetComponent<HealthManager>(out HealthManager healthManager))
         {
-            health.TakeDamage(damage);
+            healthManager.TakeDamage(damage);
         }
     }
 

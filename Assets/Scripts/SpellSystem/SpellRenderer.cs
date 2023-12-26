@@ -16,6 +16,7 @@ public class SpellRenderer : MonoBehaviour
     [SerializeField] private RectTransform inputTransform;
     [SerializeField] private TMP_InputField inputComponent;
     [SerializeField] private CanvasGroup canvasgroupComponent;
+    [SerializeField] private PlayerSpellEvents playerSpellEvents;
 
     private PlayerMovement _playerMovement;
     // private int timesTextChanged = -1;
@@ -97,11 +98,14 @@ public class SpellRenderer : MonoBehaviour
     }
 
     public void SubmitSpell(string s){
+        // print("Entered SubmitSpell"); нет, заходит в ивент SubmitSpell всего один раз
         s = s.Trim();
         s = s.RemoveConsecutiveCharacters(' ');
         currentString = s;
-        print(s);
+        print("From SubmitSpell: " + s);
         inputComponent.text = "";
+        // playerSpellEvents.Invoke("PlayerCastsASpell", 0);
+        playerSpellEvents.PlayerCastsASpell.Invoke(s);
     }
 
 

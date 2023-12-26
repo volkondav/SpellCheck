@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _healthText;
     [SerializeField] private int _currentHealth;

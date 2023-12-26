@@ -193,7 +193,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21119908}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9047166618331342065}
+      - m_Target: {fileID: 9047166618331342066}
         m_TargetAssemblyTypeName: SpellRenderer, Assembly-CSharp
         m_MethodName: SubmitSpell
         m_Mode: 0
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9047166618331342065}
+      - m_Target: {fileID: 9047166618331342066}
         m_TargetAssemblyTypeName: SpellRenderer, Assembly-CSharp
         m_MethodName: TextChanged
         m_Mode: 0
@@ -3299,6 +3299,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713579272}
   m_CullTransparentMesh: 1
+--- !u!1 &1726109216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726109218}
+  - component: {fileID: 1726109217}
+  m_Layer: 0
+  m_Name: PlayerSpellEventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1726109217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726109216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212a4181a83aff748ad4f183274643d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCastsASpell:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9047166618331342067}
+        m_TargetAssemblyTypeName: SpellCast, Assembly-CSharp
+        m_MethodName: CreateSpell
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DummyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1726109218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726109216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.97528136, y: 0.16278279, z: -0.16444178}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1790003218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3670,9 +3732,9 @@ GameObject:
   - component: {fileID: 9047166618331342061}
   - component: {fileID: 9047166618331342062}
   - component: {fileID: 9047166618331342063}
-  - component: {fileID: 9047166618331342065}
   - component: {fileID: 9047166618331342064}
-  - component: {fileID: 9047166618331342065}
+  - component: {fileID: 9047166618331342066}
+  - component: {fileID: 9047166618331342067}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3720,7 +3782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -155.1, y: 0}
+  m_AnchoredPosition: {x: -155, y: 0}
   m_SizeDelta: {x: 200, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &826310829950587911
@@ -3803,7 +3865,7 @@ Transform:
   m_Children:
   - {fileID: 4052439240965404843}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1609577637769484935
 RectTransform:
@@ -4316,8 +4378,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -124, y: 0}
-  m_SizeDelta: {x: 125, y: 120}
+  m_AnchoredPosition: {x: -155, y: 0}
+  m_SizeDelta: {x: 200, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4607682737715464894
 CanvasRenderer:
@@ -4470,7 +4532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4787,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthText: {fileID: 5775283429609244601}
-  _currentHealth: 10
+  _currentHealth: 100
 --- !u!1 &8820357195040225813
 GameObject:
   m_ObjectHideFlags: 0
@@ -4952,7 +5014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthText: {fileID: 2220938861262443669}
   _currentHealth: 100
---- !u!114 &9047166618331342065
+--- !u!114 &9047166618331342066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4961,10 +5023,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 427178551944807160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e3f393718a3f5478e2f649dba172a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellsDictionary: {fileID: 11400000, guid: 93bceadc79d0acd43ba38b1dc79a8c22, type: 2}
   m_Script: {fileID: 11500000, guid: f432a1beb74fcf24e9a3deb2dccbbef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -4972,3 +5030,17 @@ MonoBehaviour:
   inputTransform: {fileID: 372127699}
   inputComponent: {fileID: 372127700}
   canvasgroupComponent: {fileID: 372127703}
+  playerSpellEvents: {fileID: 1726109217}
+--- !u!114 &9047166618331342067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427178551944807160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57cb1a51ec4cb474091ddece460610f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellsDictionary: {fileID: 11400000, guid: 93bceadc79d0acd43ba38b1dc79a8c22, type: 2}

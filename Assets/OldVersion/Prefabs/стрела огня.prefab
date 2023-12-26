@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 1383021076081997209}
   - component: {fileID: 2843278689739090628}
   - component: {fileID: 3170397067031322416}
-  - component: {fileID: 8326999249904278841}
   - component: {fileID: -9069644535337974953}
+  - component: {fileID: 8326999249904278841}
   m_Layer: 0
-  m_Name: "\u0421\u0442\u0440\u0435\u043B\u0430 \u043E\u0433\u043D\u044F"
+  m_Name: "\u0441\u0442\u0440\u0435\u043B\u0430 \u043E\u0433\u043D\u044F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,19 +157,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8326999249904278841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4372869314271501201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d2518be08077445b622645c4394fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpellSpeed: 6
 --- !u!114 &-9069644535337974953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +169,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0098f5f186fcde2408b972631ed86e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8326999249904278841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4372869314271501201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d2518be08077445b622645c4394fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPosition: {x: 1.5, y: 0}
+  damage: 2
+  _spellSpeed: 7

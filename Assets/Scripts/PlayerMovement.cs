@@ -39,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // public void TestEvent(){
+    //     print("From TestEvent");
+    // }
+
     void Start(){
 
     }

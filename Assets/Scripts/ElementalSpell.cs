@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class ElementalSpell : Spell
 {
-    [SerializeField] private ScriptableElementalSpell _spellAttribute;
-    private float _spellSpeed;
-    private float _explosionTime;
+    // [SerializeField] private ScriptableElementalSpell _spellAttribute;
+    [SerializeField] private float _spellSpeed;
+    [SerializeField] private float _explosionTime;
 
     private Transform Explosion;
     private Rigidbody2D spellBody;
@@ -16,9 +16,9 @@ public class ElementalSpell : Spell
         spellBody = GetComponent<Rigidbody2D>();
         Explosion = this.gameObject.transform.GetChild(0);
 
-        damage = _spellAttribute.damage;
-        _spellSpeed = _spellAttribute.spellSpeed;
-        _explosionTime = _spellAttribute.explosionTime;
+        // damage = _spellAttribute.damage;
+        // _spellSpeed = _spellAttribute.spellSpeed;
+        // _explosionTime = _spellAttribute.explosionTime;
     }
     void Start()
     {

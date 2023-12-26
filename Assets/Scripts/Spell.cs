@@ -2,5 +2,6 @@ using UnityEngine;
 
 public abstract class Spell : MonoBehaviour
 {
-    public int damage;
+    [SerializeField] public Vector2 SpawnPosition;
+    [SerializeField] public int damage;
 }

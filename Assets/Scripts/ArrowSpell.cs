@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class ArrowSpell : Spell
 {
-    [SerializeField] private ScriptableArrowSpell _spellAttribute;
-    private float _spellSpeed;
+    // [SerializeField] private ScriptableArrowSpell _spellAttribute;
+    [SerializeField] private float _spellSpeed;
     private Rigidbody2D spellBody;
     private float spellXPosition;
 
     void Awake()
     {
         spellBody = GetComponent<Rigidbody2D>();
-        _spellSpeed = _spellAttribute.spellSpeed;
-        damage = _spellAttribute.damage;
+        // _spellSpeed = _spellAttribute.spellSpeed;
+        // damage = _spellAttribute.damage;
     }
     void Start()
     {
