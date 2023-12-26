@@ -8,6 +8,10 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+        if (_currentHealth < 0)
+        {
+            _currentHealth = 0;
+        }
         _healthText.text = _currentHealth.ToString();
     }
 

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TestSpellsDictionary : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class TestSpellsDictionary : MonoBehaviour
     {
         foreach(GameObject spell in spellsDictionary.spellPrefabs)
         {
-            //print(spell.name.ToLower());
+            // print(spell.name.ToLower()); // пример
         }
     }
 }

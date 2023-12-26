@@ -6,10 +6,10 @@ public class DamageEffect : MonoBehaviour
 
     private void Awake()
     {
-        _damage = GetComponentInParent<Spell>().damage;
+        _damage = GetComponentInParent<Spell>().damage; // Research this
     }
 
-    private void Damage(Collider2D targetCollider, int damage)
+    private void DealDamage(Collider2D targetCollider, int damage)
     {
         if (targetCollider.TryGetComponent<Health>(out Health health))
         {
@@ -19,6 +19,6 @@ public class DamageEffect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Damage(collision, _damage);
+        DealDamage(collision, _damage);
     }
 }
