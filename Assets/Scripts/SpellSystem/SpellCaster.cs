@@ -9,6 +9,7 @@ public class SpellCaster : MonoBehaviour
     [SerializeField] private ScriptableSpellsDictionary spellsDictionary;
     [SerializeField] private TMP_InputField inputComponent;
     [SerializeField] private Image image;
+    
     private void Awake()
     {
 
@@ -40,9 +41,16 @@ public class SpellCaster : MonoBehaviour
                         break;
                 }
                 inputComponent.text = "";
-                break;
+                return;
                 // Instantiate(spell, new Vector3( gameObject.transform.position.x + spellValues.SpawnPosition.x, gameObject.transform.position.y + spellValues.SpawnPosition.y), new Quaternion());
             }
+            // StartCoroutine(HighlightMisspell());
+            // print(spell.name.ToLower()); // пример
+        }
+        HighlightMisspell();
+    }
+
+    public void HighlightMisspell(){
 
             // На самом деле, очень странная проблема. Если использовать image.CrossFadeColor(), то изначально надо поставить цвет через image.canvasRenderer.SetColor()
             // Просто image.color = new Color не работает, нужно задавать почему-то именно из canvasRenderer
@@ -50,14 +58,8 @@ public class SpellCaster : MonoBehaviour
 
             // image.color = Color.HSVToRGB( 0, 1, 1);
             // print("Image Colour: " + image.color);
-
             image.canvasRenderer.SetColor( Color.HSVToRGB( 0, 1, 1) );
             image.CrossFadeColor( Color.HSVToRGB(0, 0, 1), 0.35f, false, false); // поставил ignoreTimeScale = false, так как было бы полезно во время паузы останавливать анимацию подсветки
-
-            // StartCoroutine(HighlightMisspell());
-            // print(spell.name.ToLower()); // пример
-        }
-
     }
 
     // public IEnumerator HighlightMisspell(){

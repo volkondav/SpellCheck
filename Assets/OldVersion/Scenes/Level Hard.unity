@@ -4807,7 +4807,7 @@ GameObject:
   - component: {fileID: 826310829950587911}
   - component: {fileID: 8166556172660921580}
   - component: {fileID: 8750921824313583366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy Hard
   m_TagString: Player
   m_Icon: {fileID: 0}

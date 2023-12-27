@@ -32,9 +32,9 @@ public class SpellInteractions : MonoBehaviour
         // DealDamage(collision, _directDamage); если честно, я плохо понимаю, зачем отдельно передавать урон в виде переменной, которая и так доступна в скрипте
         int layer = collision.gameObject.layer;
         switch ( layer ){
-            // case 8: // на время написания кода layer 8 -- это слой Player
-            //     DealDamage(collision);
-            //     break;   
+            case 8: // на время написания кода layer 8 -- это слой Characters
+                // DealDamage(collision);
+                break;   
             case 6: // на время написания кода layer 6 -- это слой Ice
                 InitiateDeath();
                 break;           
