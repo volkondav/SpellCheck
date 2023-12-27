@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7331168750260692792}
   - component: {fileID: 6405386370978082039}
   - component: {fileID: 5561985156926706520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ice Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 8734068190176927303}
   - component: {fileID: 6103637136227405520}
   - component: {fileID: 1340191822204024667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\u043F\u0440\u0438\u0437\u044B\u0432 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430\u043B\u044F
     \u043B\u044C\u0434\u0430"
   m_TagString: Untagged

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7787625273335005328}
   - component: {fileID: 7740017029080307850}
   - component: {fileID: 8762488027344345332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\u0441\u0442\u0440\u0435\u043B\u0430 \u043B\u044C\u0434\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 230078199
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1083675962, guid: 19d9d3de286b0884ba33dc49a09cf190, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -183,7 +183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPosition: {x: 1.5, y: 0}
-  damage: 10
+  DirectDamage: 0
+  DamageOT: 0
+  DOTTimes: 0
   _spellSpeed: 10
 --- !u!114 &8762488027344345332
 MonoBehaviour:

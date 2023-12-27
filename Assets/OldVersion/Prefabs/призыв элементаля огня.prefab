@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 626536018497114571}
   - component: {fileID: 632835974900545507}
   - component: {fileID: 4294726454543072243}
-  m_Layer: 0
+  - component: {fileID: 5739338965639418912}
+  m_Layer: 7
   m_Name: Fire Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,6 +124,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5739338965639418912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420664956764253181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6762728872827118846
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +149,7 @@ GameObject:
   - component: {fileID: 8283309574972574986}
   - component: {fileID: 7606698882271301028}
   - component: {fileID: 710597870763690356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u043F\u0440\u0438\u0437\u044B\u0432 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430\u043B\u044F
     \u043E\u0433\u043D\u044F"
   m_TagString: Untagged
@@ -272,5 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPosition: {x: 1.5, y: 0}
-  damage: 0
-  _spellAttribute: {fileID: 0}
+  DirectDamage: 0
+  DamageOT: 10
+  DOTTimes: 3
+  _spellSpeed: 4
+  _explosionTime: 3
