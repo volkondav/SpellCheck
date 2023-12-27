@@ -20,11 +20,17 @@ public class ArrowSpell : Spell
 
     void FixedUpdate()
     {
-        spellXPosition = transform.position.x;
+        // spellXPosition = transform.position.x;
         // print(spellXPosition);
-        if ( spellXPosition > 11 ){
+        CheckForFinalPosition();
+    }
+
+    public void CheckForFinalPosition(){
+        // if ( spellXPosition > 11 ){
+        if ( transform.position.x > 11 ){
             Destroy(gameObject);
             // print("Entered if");
         }
+
     }
 }

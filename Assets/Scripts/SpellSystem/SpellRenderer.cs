@@ -47,7 +47,7 @@ public class SpellRenderer : MonoBehaviour
         // вот что я понял:
         // 1. (inputComponent.text = s) снова вызывает ивент TextChanged, но при этом не передаёт новую позицию каретки
         // 2. ивент TextChanged обновляет позицию каретки сркытно в самом конце
-    private void UpdateCaretPosition(){
+    public void UpdateCaretPosition(){
         if ( _playerMovement.newSideCaretPosition != -1 ){
              inputComponent.caretPosition = _playerMovement.newSideCaretPosition;
             _playerMovement.newSideCaretPosition = -1;
@@ -102,8 +102,8 @@ public class SpellRenderer : MonoBehaviour
         s = s.Trim();
         s = s.RemoveConsecutiveCharacters(' ');
         currentString = s;
-        print("From SubmitSpell: " + s);
-        inputComponent.text = "";
+        // print("From SubmitSpell: " + s);
+        // inputComponent.text = ""; очистка текста происходит в SpellCaster.cs при успешном соотвествии заклинания
         // playerSpellEvents.Invoke("PlayerCastsASpell", 0);
         playerSpellEvents.PlayerCastsASpell.Invoke(s);
     }

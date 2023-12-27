@@ -24,12 +24,16 @@ public class HealthManager : MonoBehaviour
         _healthText.text = _currentHealth.ToString();
     }
 
+    public void IncreaseHealth(int healing){
+        _currentHealth += healing;
+    }
+
     public void TakeDirectDamage(int damage)
     {
         _currentHealth -= damage;
     }
 
-    public IEnumerator TakeDamageOvetTime(){
+    IEnumerator TakeDamageOvetTime(){
         hasAnActiveDot = true;
         while ( dotList.Count > 0 ){
             // print("before yield");

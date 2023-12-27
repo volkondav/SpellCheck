@@ -1,5 +1,8 @@
 fileFormatVersion: 2
-guid: 4dde9aed6c3580b45907540b62820da0
+guid: aa5b74c5d47c1964e934eb545e4de294
+labels:
+- Ice
+- Nova
 PrefabImporter:
   externalObjects: {}
   userData: 

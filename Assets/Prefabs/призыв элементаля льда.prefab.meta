@@ -1,5 +1,8 @@
 fileFormatVersion: 2
-guid: 688265ed15b99844d806a83ec4cbbdbc
+guid: 4dde9aed6c3580b45907540b62820da0
+labels:
+- Elemental
+- Ice
 PrefabImporter:
   externalObjects: {}
   userData: 

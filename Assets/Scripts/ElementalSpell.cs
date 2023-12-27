@@ -6,16 +6,17 @@ public class ElementalSpell : Spell
     // [SerializeField] private ScriptableElementalSpell _spellAttribute;
     [SerializeField] private float _spellSpeed;
     [SerializeField] private float _explosionTime;
+    [SerializeField] private GameObject _explosionNova;
 
-    private Transform Explosion;
+    // private Transform Explosion;
     private Rigidbody2D spellBody;
     private float spellXPosition;
 
     // Start is called before the first frame update
     void Awake(){
         spellBody = GetComponent<Rigidbody2D>();
-        Explosion = this.gameObject.transform.GetChild(0);
 
+        // Explosion = this.gameObject.transform.GetChild(0);
         // damage = _spellAttribute.damage;
         // _spellSpeed = _spellAttribute.spellSpeed;
         // _explosionTime = _spellAttribute.explosionTime;
@@ -27,17 +28,24 @@ public class ElementalSpell : Spell
 
     void FixedUpdate()
     {
-        spellXPosition = transform.position.x;
+        // spellXPosition = transform.position.x;
         // print(spellXPosition);
-        if ( spellXPosition >= 4.5f ){
+        CheckForFinalPosition();
+    }
+
+    public void CheckForFinalPosition(){
+        // if ( spellXPosition >= 4.5f ){
+        if ( transform.position.x >= 4.5f && spellBody.velocity.x != 0 ){
             StartCoroutine(ExplosionActive());
         }
+
     }
 
     IEnumerator ExplosionActive(){
         // print("entered");
         spellBody.velocity = new Vector2(0,0);
-        Explosion.gameObject.SetActive(true);
+        // Explosion.gameObject.SetActive(true);
+        Instantiate(_explosionNova, this.gameObject.transform );
         yield return new WaitForSeconds(_explosionTime);
         Destroy(gameObject);
     }
