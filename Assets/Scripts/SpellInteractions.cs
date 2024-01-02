@@ -29,6 +29,7 @@ public class SpellInteractions : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
         // DealDamage(collision, _directDamage); если честно, я плохо понимаю, зачем отдельно передавать урон в виде переменной, которая и так доступна в скрипте
         int layer = collision.gameObject.layer;
         switch ( layer ){

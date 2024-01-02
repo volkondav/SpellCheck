@@ -47,6 +47,6 @@ public class ElementalSpell : Spell
         // Explosion.gameObject.SetActive(true);
         Instantiate(_explosionNova, this.gameObject.transform );
         yield return new WaitForSeconds(_explosionTime);
-        Destroy(gameObject);
+        Destroy( this.gameObject );
     }
 }

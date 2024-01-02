@@ -9,7 +9,8 @@ public class HealthManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _healthText;
     [SerializeField] private int _currentHealth;
-    private int[] dotArray = new int[12];
+    [SerializeField] private int[] damageReduction = new int[2]; // первое значение -- это снижение прямого урона, второе -- периодического
+    // private int[] dotArray = new int[12];
     // private List<int> dotList = new List<int>(); // заменить нижнюю версию на эту
     [SerializeField] private List<int> dotList = new List<int>();
 
@@ -28,9 +29,15 @@ public class HealthManager : MonoBehaviour
         _currentHealth += healing;
     }
 
+    public void UpdateDamageReduction( int[] newDamageReductionValues ){
+        for (int i = 0; i < damageReduction.Length ; i++)
+            damageReduction[i] = newDamageReductionValues[i];
+    }
+
     public void TakeDirectDamage(int damage)
     {
-        _currentHealth -= damage;
+        if ( damage - damageReduction[0] > 0 )
+            _currentHealth -= ( damage - damageReduction[0] ) ;
     }
 
     IEnumerator TakeDamageOvetTime(){
@@ -39,7 +46,8 @@ public class HealthManager : MonoBehaviour
             // print("before yield");
             yield return new WaitForSeconds(1);
             // print("after yield");
-            _currentHealth -= dotList[0];
+            if ( dotList[0] - damageReduction[1] > 0 )
+                _currentHealth -= ( dotList[0] - damageReduction[1] );
             dotList.RemoveAt(0);
         }
         hasAnActiveDot = false;
