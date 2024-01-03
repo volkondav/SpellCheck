@@ -27,7 +27,7 @@ public class SpellInteractions : MonoBehaviour
     //     }
     // }
 
-    [SerializeField] private ScriptableSpellsDictionary interactionSpellsDictionary;
+    [SerializeField] private ScriptableSpellList interactionSpellList;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -49,13 +49,12 @@ public class SpellInteractions : MonoBehaviour
             case 7: // Ice
                 switch (otherLayer)
                 {
-                    case 6: // Characrters
+                    case 6: // Characters
                         // DealDamage(collision);   
                         break;
                     case 7: // Ice
                         IceIce();
                         InitiateDeath(collision.gameObject);
-                        InitiateDeath(gameObject);
                         break;
                     case 8: // Fire
                         break;
@@ -71,7 +70,7 @@ public class SpellInteractions : MonoBehaviour
             case 8: // Fire
                 switch (otherLayer)
                 {
-                    case 6: // Characrters
+                    case 6: // Characters
                         // DealDamage(collision);   
                         break;
                     case 7: // Ice
@@ -90,7 +89,7 @@ public class SpellInteractions : MonoBehaviour
             case 9: // Dark
                 switch (otherLayer)
                 {
-                    case 6: // Characrters
+                    case 6: // Characters
                         // DealDamage(collision);   
                         break;
                     case 7: // Ice
@@ -109,7 +108,7 @@ public class SpellInteractions : MonoBehaviour
             case 10: // Light
                 switch (otherLayer)
                 {
-                    case 6: // Characrters
+                    case 6: // Characters
                         // DealDamage(collision);   
                         break;
                     case 7: // Ice
@@ -126,21 +125,42 @@ public class SpellInteractions : MonoBehaviour
                 }
                 break;
             default:
-                print("Could not retrieve a valid layer for: " + gameObject.name);
+                Debug.Log( "Could not retrieve a valid layer for: " + collision.name, collision.gameObject );
                 break;
+
+
+        // // Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
+        // // DealDamage(collision, _directDamage); если честно, я плохо понимаю, зачем отдельно передавать урон в виде переменной, которая и так доступна в скрипте
+        // int layer = collision.gameObject.layer;
+        // switch ( layer ){
+        //     case 6: // на время написания кода layer 6 -- это слой Characters
+        //         // DealDamage(collision);
+        //         break;   
+        //     case 7: // на время написания кода layer 7 -- это слой Ice
+        //         InitiateDeath( collision.gameObject );
+        //         break;           
+        //     case 8: // на время написания кода layer 8 -- это слой Fire
+        //         InitiateDeath( collision.gameObject );
+        //         break;
+        //     default:
+        //         // print("Could not retrieve a valid layer for: " + collision.name );
+        //         Debug.Log( "Could not retrieve a valid layer for: " + collision.name, collision.gameObject );
+        //         break;
+        // }
         }
     }
-    public void InitiateDeath(GameObject gameObject)
-    {
+    public void InitiateDeath( GameObject collisionGameObject ){
+        // print("GameObject with name \"" + gameObject.name + "\" was destroyed when colliding with layer " + layer);
+        Debug.Log(this.gameObject.name + " was destroyed when colliding with " + collisionGameObject.name, collisionGameObject );
         Destroy(gameObject);
     }
 
     public void IceIce()
     {
-        int directDamage = GetComponent<Spell>().DirectDamage;
+        int directDamage = GetComponent<DamagingSpell>().DirectDamage;
         Vector2 spellSpeed = GetComponent<Rigidbody2D>().velocity;
 
-        GameObject miniArrow = interactionSpellsDictionary.spellPrefabs[0];
+        GameObject miniArrow = interactionSpellList.spellPrefabs[0];
         var positions = new List<float> { 1.5f, -0.5f, -2.5f };
 
         positions.Remove(transform.position.y);
@@ -148,7 +168,7 @@ public class SpellInteractions : MonoBehaviour
         Vector3 spawnPosition = new Vector3(transform.position.x, randomPosition);
 
         miniArrow = Instantiate(miniArrow, spawnPosition, new Quaternion());
-        miniArrow.GetComponent<Spell>().DirectDamage = directDamage / 2;
+        miniArrow.GetComponent<DamagingSpell>().DirectDamage = directDamage / 2;
         miniArrow.GetComponent<Rigidbody2D>().velocity = spellSpeed / 2;
         miniArrow.transform.rotation = transform.rotation;
 

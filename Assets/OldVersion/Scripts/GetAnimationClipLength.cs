@@ -10,11 +10,10 @@ public class GetAnimationClipLength : MonoBehaviour
     float m_CurrentClipLength;
     string m_ClipName;
 
-    void Start()
+    void Awake()
     {
         // Get them_Animator, which you attach to the GameObject you intend to animate.
         m_Animator = gameObject.GetComponent<Animator>();
-        //
     }
 
     public float GetClipInfo(){

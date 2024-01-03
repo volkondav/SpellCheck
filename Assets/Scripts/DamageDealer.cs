@@ -11,9 +11,9 @@ public class DamageDealer : MonoBehaviour
 
     void Awake()
     {
-        _directDamage = GetComponent<Spell>().DirectDamage;
-        _damageOT = GetComponent<Spell>().DamageOT;
-        _dotTimes = GetComponent<Spell>().DOTTimes;
+        _directDamage = GetComponent<DamagingSpell>().DirectDamage;
+        _damageOT = GetComponent<DamagingSpell>().DamageOT;
+        _dotTimes = GetComponent<DamagingSpell>().DOTTimes;
     }
 
     void OnTriggerEnter2D(Collider2D collision){
