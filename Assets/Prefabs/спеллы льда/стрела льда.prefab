@@ -187,7 +187,7 @@ MonoBehaviour:
   DirectDamage: 10
   DamageOT: 0
   DOTTimes: 0
-  _spellSpeed: 0
+  _spellSpeed: 3
 --- !u!114 &8762488027344345332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionSpellsDictionary: {fileID: 11400000, guid: 1e9ef9ed1a867814cb1ba28f5abd5ebb, type: 2}
+  interactionSpellList: {fileID: 11400000, guid: 1e9ef9ed1a867814cb1ba28f5abd5ebb, type: 2}
 --- !u!114 &-1313680996866124208
 MonoBehaviour:
   m_ObjectHideFlags: 0

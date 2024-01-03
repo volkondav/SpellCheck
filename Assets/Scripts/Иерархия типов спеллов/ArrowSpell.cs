@@ -60,4 +60,10 @@ public class ArrowSpell : DamagingSpell
     void InitiateDeath(){
         Destroy(gameObject);
     }
+
+    public void HalveSpeedAndDamage()
+    {
+        _spellSpeed = _spellSpeed / 2;
+        DirectDamage = DirectDamage / 2;
+    }
 }

@@ -184,11 +184,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d2518be08077445b622645c4394fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpellCharacteristics: attack
+  spellCharacteristics: 0
   DirectDamage: 0
   DamageOT: 0
   DOTTimes: 0
-  _spellSpeed: 0
+  _spellSpeed: 3
 --- !u!114 &8762488027344345332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionSpellsDictionary: {fileID: 0}
+  interactionSpellList: {fileID: 0}
 --- !u!114 &-1313680996866124208
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -157,9 +157,6 @@ public class SpellInteractions : MonoBehaviour
 
     public void IceIce()
     {
-        int directDamage = GetComponent<DamagingSpell>().DirectDamage;
-        Vector2 spellSpeed = GetComponent<Rigidbody2D>().velocity;
-
         GameObject miniArrow = interactionSpellList.spellPrefabs[0];
         var positions = new List<float> { 1.5f, -0.5f, -2.5f };
 
@@ -167,16 +164,9 @@ public class SpellInteractions : MonoBehaviour
         float randomPosition = positions[Random.Range(0, positions.Count - 1)];
         Vector3 spawnPosition = new Vector3(transform.position.x, randomPosition);
 
-        miniArrow = Instantiate(miniArrow, spawnPosition, new Quaternion());
-        miniArrow.GetComponent<DamagingSpell>().DirectDamage = directDamage / 2;
-        miniArrow.GetComponent<Rigidbody2D>().velocity = spellSpeed / 2;
-        miniArrow.transform.rotation = transform.rotation;
+        miniArrow = Instantiate(miniArrow, spawnPosition, transform.rotation);
+        miniArrow.GetComponent<ArrowSpell>().HalveSpeedAndDamage();
 
-
-        //positions.Remove(randomPosition);
-        //randomPosition = positions[Random.Range(0, positions.Count - 1)];
-        //spawnPosition = new Vector3(transform.position.x, randomPosition);
-        //Instantiate(miniArrow, spawnPosition, new Quaternion());
     }
 
     public void LightLight()
