@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpellInteractions : MonoBehaviour
@@ -27,30 +27,140 @@ public class SpellInteractions : MonoBehaviour
     //     }
     // }
 
+    [SerializeField] private ScriptableSpellsDictionary interactionSpellsDictionary;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
-        // DealDamage(collision, _directDamage); если честно, я плохо понимаю, зачем отдельно передавать урон в виде переменной, которая и так доступна в скрипте
-        int layer = collision.gameObject.layer;
-        switch ( layer ){
-            case 8: // на время написания кода layer 8 -- это слой Characters
-                // DealDamage(collision);
-                break;   
-            case 6: // на время написания кода layer 6 -- это слой Ice
-                InitiateDeath();
-                break;           
-            case 7: // на время написания кода layer 7 -- это слой Fire
-                InitiateDeath();
+        /*
+         * Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
+         * DealDamage(collision, _directDamage); если честно, я плохо понимаю, 
+         *  зачем отдельно передавать урон в виде переменной, которая и так доступна в скрипте
+         * Layers:
+         *  6 - Characrters
+         *  7 - Ice
+         *  8 - Fire
+         *  9 - Dark
+         *  10 - Light
+         */
+        int thisLayer = gameObject.layer; 
+        int otherLayer = collision.gameObject.layer;
+        switch (thisLayer)
+        {
+            case 7: // Ice
+                switch (otherLayer)
+                {
+                    case 6: // Characrters
+                        // DealDamage(collision);   
+                        break;
+                    case 7: // Ice
+                        IceIce();
+                        InitiateDeath(collision.gameObject);
+                        InitiateDeath(gameObject);
+                        break;
+                    case 8: // Fire
+                        break;
+                    case 9: // Dark
+                        break;
+                    case 10: // Light
+                        break;
+                    default:
+                        print("Could not retrieve a valid layer for: " + collision.name);
+                        break;
+                }
+                break;
+            case 8: // Fire
+                switch (otherLayer)
+                {
+                    case 6: // Characrters
+                        // DealDamage(collision);   
+                        break;
+                    case 7: // Ice
+                        break;
+                    case 8: // Fire
+                        break;
+                    case 9: // Dark
+                        break;
+                    case 10: // Light
+                        break;
+                    default:
+                        print("Could not retrieve a valid layer for: " + collision.name);
+                        break;
+                }
+                break;
+            case 9: // Dark
+                switch (otherLayer)
+                {
+                    case 6: // Characrters
+                        // DealDamage(collision);   
+                        break;
+                    case 7: // Ice
+                        break;
+                    case 8: // Fire
+                        break;
+                    case 9: // Dark
+                        break;
+                    case 10: // Light
+                        break;
+                    default:
+                        print("Could not retrieve a valid layer for: " + collision.name);
+                        break;
+                }
+                break;
+            case 10: // Light
+                switch (otherLayer)
+                {
+                    case 6: // Characrters
+                        // DealDamage(collision);   
+                        break;
+                    case 7: // Ice
+                        break;
+                    case 8: // Fire
+                        break;
+                    case 9: // Dark
+                        break;
+                    case 10: // Light
+                        break;
+                    default:
+                        print("Could not retrieve a valid layer for: " + collision.name);
+                        break;
+                }
                 break;
             default:
-                print("Could not retrieve a valid layer for: " + collision.name );
+                print("Could not retrieve a valid layer for: " + gameObject.name);
                 break;
-            }
-        // if ( collision.gameObject.layer == 8 ) // на время написания кода layer 8 -- это слой Player
-        //     DealDamage(collision);
+        }
     }
-    public void InitiateDeath(){
+    public void InitiateDeath(GameObject gameObject)
+    {
         Destroy(gameObject);
     }
+
+    public void IceIce()
+    {
+        int directDamage = GetComponent<Spell>().DirectDamage;
+        Vector2 spellSpeed = GetComponent<Rigidbody2D>().velocity;
+
+        GameObject miniArrow = interactionSpellsDictionary.spellPrefabs[0];
+        var positions = new List<float> { 1.5f, -0.5f, -2.5f };
+
+        positions.Remove(transform.position.y);
+        float randomPosition = positions[Random.Range(0, positions.Count - 1)];
+        Vector3 spawnPosition = new Vector3(transform.position.x, randomPosition);
+
+        miniArrow = Instantiate(miniArrow, spawnPosition, new Quaternion());
+        miniArrow.GetComponent<Spell>().DirectDamage = directDamage / 2;
+        miniArrow.GetComponent<Rigidbody2D>().velocity = spellSpeed / 2;
+        miniArrow.transform.rotation = transform.rotation;
+
+
+        //positions.Remove(randomPosition);
+        //randomPosition = positions[Random.Range(0, positions.Count - 1)];
+        //spawnPosition = new Vector3(transform.position.x, randomPosition);
+        //Instantiate(miniArrow, spawnPosition, new Quaternion());
+    }
+
+    public void LightLight()
+    {
         
+    }
 }

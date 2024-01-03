@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3015070712899839172}
   - component: {fileID: 2012281129192729275}
   - component: {fileID: 1390059052243955986}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: "\u0449\u0438\u0442 \u043E\u0433\u043D\u044F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,6 +152,7 @@ MonoBehaviour:
   DamageOT: 0
   DOTTimes: 0
   shieldDuration: 30
+  remainingShieldDuration: 0
   damageReductionValues: 0000000005000000
 --- !u!114 &1390059052243955986
 MonoBehaviour:
@@ -165,3 +166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionSpellsDictionary: {fileID: 0}

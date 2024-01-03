@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7606698882271301028}
   - component: {fileID: 710597870763690356}
   - component: {fileID: 1580869171652296873}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: "\u043F\u0440\u0438\u0437\u044B\u0432 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430\u043B\u044F
     \u043E\u0433\u043D\u044F"
   m_TagString: Untagged
@@ -167,3 +167,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionSpellsDictionary: {fileID: 0}
