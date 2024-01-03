@@ -6,7 +6,10 @@ using TMPro;
 
 public class SpellCaster : MonoBehaviour
 {
-    [SerializeField] private ScriptableSpellsDictionary spellsDictionary;
+    [SerializeField] private ScriptableSpellsDictionary spellsDictionaryIce;
+    [SerializeField] private ScriptableSpellsDictionary spellsDictionaryFire;
+    [SerializeField] private ScriptableSpellsDictionary spellsDictionaryLight;
+    [SerializeField] private ScriptableSpellsDictionary spellsDictionaryDark;
     [SerializeField] private TMP_InputField inputComponent;
     [SerializeField] private Image image;
     
@@ -23,31 +26,48 @@ public class SpellCaster : MonoBehaviour
 
     public void CreateSpell(string spellName){
         // print("From CreateSpell: " + spell);
+        if ( TryCreateFromDictionary(spellName, spellsDictionaryIce) )
+            return;
+        if ( TryCreateFromDictionary(spellName, spellsDictionaryFire) )
+            return;
+        if ( TryCreateFromDictionary(spellName, spellsDictionaryLight) )
+            return;
+        if ( TryCreateFromDictionary(spellName, spellsDictionaryDark) )
+            return;
+        HighlightMisspell();
+    }
+
+    public bool TryCreateFromDictionary( string spellName, ScriptableSpellsDictionary spellsDictionary ){
         foreach(GameObject spell in spellsDictionary.spellPrefabs)
         {
             if ( spell.name == spellName ){
                 Spell spellValues;
                 spell.TryGetComponent<Spell>(out spellValues);
                 // Instantiate<GameObject>(spell);
-                switch (spellValues.SpellCharacteristics){
-                    case "attack":
-                        Instantiate(spell, new Vector3( gameObject.transform.position.x + 1.5f, gameObject.transform.position.y + 0f ), new Quaternion());
+                switch (spellValues.spellCharacteristics){
+                    case Spell.SpellCharacteristics.Standalone:
+                        // Instantiate(spell, new Vector3( gameObject.transform.position.x + 1.5f, gameObject.transform.position.y + 0f ), new Quaternion());
+                        // print(spell.transform.position.x);
+                        Instantiate(spell, new Vector3( gameObject.transform.position.x + spell.transform.position.x , gameObject.transform.position.y + spell.transform.position.y ), new Quaternion() );
                         break;
-                    case "buff":
-                        Instantiate(spell, this.gameObject.transform );
+                    case Spell.SpellCharacteristics.AsChild:
+                        Instantiate(spell, new Vector3( gameObject.transform.position.x + spell.transform.position.x , gameObject.transform.position.y + spell.transform.position.y ), new Quaternion(), this.gameObject.transform );
                         break;
+                    // case Spell.SpellCharacteristics.AtCharacter:
+                    //     Instantiate(spell, new Vector3( gameObject.transform.position.x, gameObject.transform.position.y - 0.4f ), new Quaternion());
+                    //     break;
                     default:
                         print("Could not retrieve valid SpellCharacteristics of: " + spell.name );
                         break;
                 }
                 inputComponent.text = "";
-                return;
+                return true;
                 // Instantiate(spell, new Vector3( gameObject.transform.position.x + spellValues.SpawnPosition.x, gameObject.transform.position.y + spellValues.SpawnPosition.y), new Quaternion());
             }
             // StartCoroutine(HighlightMisspell());
             // print(spell.name.ToLower()); // пример
         }
-        HighlightMisspell();
+        return false;
     }
 
     public void HighlightMisspell(){

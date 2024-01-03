@@ -33,23 +33,26 @@ public class SpellInteractions : MonoBehaviour
         // DealDamage(collision, _directDamage); если честно, я плохо понимаю, зачем отдельно передавать урон в виде переменной, которая и так доступна в скрипте
         int layer = collision.gameObject.layer;
         switch ( layer ){
-            case 8: // на время написания кода layer 8 -- это слой Characters
+            case 6: // на время написания кода layer 6 -- это слой Characters
                 // DealDamage(collision);
                 break;   
-            case 6: // на время написания кода layer 6 -- это слой Ice
-                InitiateDeath();
+            case 7: // на время написания кода layer 7 -- это слой Ice
+                InitiateDeath( collision.gameObject );
                 break;           
-            case 7: // на время написания кода layer 7 -- это слой Fire
-                InitiateDeath();
+            case 8: // на время написания кода layer 8 -- это слой Fire
+                InitiateDeath( collision.gameObject );
                 break;
             default:
-                print("Could not retrieve a valid layer for: " + collision.name );
+                // print("Could not retrieve a valid layer for: " + collision.name );
+                Debug.Log( "Could not retrieve a valid layer for: " + collision.name, collision.gameObject );
                 break;
             }
         // if ( collision.gameObject.layer == 8 ) // на время написания кода layer 8 -- это слой Player
         //     DealDamage(collision);
     }
-    public void InitiateDeath(){
+    public void InitiateDeath( GameObject collisionGameObject ){
+        // print("GameObject with name \"" + gameObject.name + "\" was destroyed when colliding with layer " + layer);
+        Debug.Log(this.gameObject.name + " was destroyed when colliding with " + collisionGameObject.name, collisionGameObject );
         Destroy(gameObject);
     }
         
