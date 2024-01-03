@@ -4,18 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SpellCaster : MonoBehaviour
+public class SpellChecker : MonoBehaviour
 {
-    [SerializeField] private ScriptableSpellsDictionary spellsDictionaryIce;
-    [SerializeField] private ScriptableSpellsDictionary spellsDictionaryFire;
-    [SerializeField] private ScriptableSpellsDictionary spellsDictionaryLight;
-    [SerializeField] private ScriptableSpellsDictionary spellsDictionaryDark;
+    [SerializeField] private ScriptableSpellList spellListIce;
+    [SerializeField] private ScriptableSpellList spellListFire;
+    [SerializeField] private ScriptableSpellList spellListLight;
+    [SerializeField] private ScriptableSpellList spellListDark;
     [SerializeField] private TMP_InputField inputComponent;
     [SerializeField] private Image image;
+    private SpellCaster spellCaster;
     
     private void Awake()
     {
-
+        spellCaster = GetComponent<SpellCaster>();
     }
 
     // Update is called once per frame
@@ -24,27 +25,28 @@ public class SpellCaster : MonoBehaviour
         
     }
 
-    public void CreateSpell(string spellName){
+    public void CheckSpellName(string spellName){
         // print("From CreateSpell: " + spell);
-        if ( TryCreateFromDictionary(spellName, spellsDictionaryIce) )
+        if ( CheckInList(spellName, spellListIce) )
             return;
-        if ( TryCreateFromDictionary(spellName, spellsDictionaryFire) )
+        if ( CheckInList(spellName, spellListFire) )
             return;
-        if ( TryCreateFromDictionary(spellName, spellsDictionaryLight) )
+        if ( CheckInList(spellName, spellListLight) )
             return;
-        if ( TryCreateFromDictionary(spellName, spellsDictionaryDark) )
+        if ( CheckInList(spellName, spellListDark) )
             return;
         HighlightMisspell();
     }
 
-    public bool TryCreateFromDictionary( string spellName, ScriptableSpellsDictionary spellsDictionary ){
-        foreach(GameObject spell in spellsDictionary.spellPrefabs)
+    public bool CheckInList( string spellName, ScriptableSpellList spellList ){
+        foreach(GameObject spell in spellList.spellPrefabs)
         {
             if ( spell.name == spellName ){
-                Spell spellValues;
-                spell.TryGetComponent<Spell>(out spellValues);
-                // Instantiate<GameObject>(spell);
-                switch (spellValues.spellCharacteristics){
+
+                /* весь код ниже был перенесён в SpellCaster.cs
+                Spell spellValues = GetComponent<Spell>();
+                // spellToCast.TryGetComponent<Spell>(out spellValues); // по факту почти то же самое, что и команда выше, только ещё проверяет на наличие компонента; такую конструкцию можно использовать только с TryGetComponent<>()
+                switch ( spellValues.spellCharacteristics ){
                     case Spell.SpellCharacteristics.Standalone:
                         // Instantiate(spell, new Vector3( gameObject.transform.position.x + 1.5f, gameObject.transform.position.y + 0f ), new Quaternion());
                         // print(spell.transform.position.x);
@@ -59,7 +61,9 @@ public class SpellCaster : MonoBehaviour
                     default:
                         print("Could not retrieve valid SpellCharacteristics of: " + spell.name );
                         break;
-                }
+                } */
+
+                spellCaster.CastASpell( spell, 1 );
                 inputComponent.text = "";
                 return true;
                 // Instantiate(spell, new Vector3( gameObject.transform.position.x + spellValues.SpawnPosition.x, gameObject.transform.position.y + spellValues.SpawnPosition.y), new Quaternion());

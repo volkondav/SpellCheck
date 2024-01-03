@@ -14,8 +14,19 @@ public class ArrowSpell : DamagingSpell
         // damage = _spellAttribute.damage;
     }
     void Start()
-    {
-        spellBody.velocity = new Vector2(_spellSpeed, 0);
+    {   
+        // spellBody.velocity = new Vector2(_spellSpeed,0);
+        switch ( transform.eulerAngles.y ){
+            case 0:
+                spellBody.velocity = new Vector2(_spellSpeed, 0);
+                break;
+            case 180:
+                spellBody.velocity = new Vector2(_spellSpeed * -1, 0);
+                break;
+            default:
+                Debug.Log("This object \"" + transform.name + "\" has unpredicted euler angles: " + transform.eulerAngles.y, transform.gameObject );
+                break;
+        }
     }
 
     void FixedUpdate()
@@ -26,11 +37,27 @@ public class ArrowSpell : DamagingSpell
     }
 
     public void CheckForFinalPosition(){
-        // if ( spellXPosition > 11 ){
-        if ( transform.position.x > 11 ){
-            Destroy(gameObject);
-            // print("Entered if");
+        switch ( transform.eulerAngles.y ){
+            case 0:
+                if ( transform.position.x > 11 )
+                    InitiateDeath();
+                break;
+            case 180:
+                if ( transform.position.x < -11 )
+                    InitiateDeath();
+                break;
+            default:
+                Debug.Log("This object \"" + transform.name + "\" has unpredicted euler angles: " + transform.eulerAngles.y, transform.gameObject );
+                break;
         }
+        // if ( transform.position.x > 11 ){
+        //     Destroy(gameObject);
+        //     // print("Entered if");
+        // }
 
+    }
+
+    void InitiateDeath(){
+        Destroy(gameObject);
     }
 }

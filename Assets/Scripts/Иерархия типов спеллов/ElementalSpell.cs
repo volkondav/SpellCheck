@@ -23,7 +23,18 @@ public class ElementalSpell : DamagingSpell
     }
     void Start()
     {
-        spellBody.velocity = new Vector2(_spellSpeed,0);
+        // spellBody.velocity = new Vector2(_spellSpeed,0);
+        switch ( transform.eulerAngles.y ){
+            case 0:
+                spellBody.velocity = new Vector2(_spellSpeed, 0);
+                break;
+            case 180:
+                spellBody.velocity = new Vector2(_spellSpeed * -1, 0);
+                break;
+            default:
+                Debug.Log("This object \"" + transform.name + "\" has unpredicted euler angles: " + transform.eulerAngles.y, transform.gameObject );
+                break;
+        }
     }
 
     void FixedUpdate()
@@ -34,11 +45,22 @@ public class ElementalSpell : DamagingSpell
     }
 
     public void CheckForFinalPosition(){
-        // if ( spellXPosition >= 4.5f ){
-        if ( transform.position.x >= 4.5f && spellBody.velocity.x != 0 ){
-            StartCoroutine(ExplosionActive());
+        // if ( transform.position.x >= 4.5f && spellBody.velocity.x != 0 ){
+        //     StartCoroutine(ExplosionActive());
+        // }
+        switch ( transform.eulerAngles.y ){
+            case 0:
+                if ( transform.position.x >= 4.5f && spellBody.velocity.x != 0 )
+                    StartCoroutine(ExplosionActive());
+                break;
+            case 180:
+                if ( transform.position.x <= -4.5f && spellBody.velocity.x != 0 )
+                    StartCoroutine(ExplosionActive());
+                break;
+            default:
+                Debug.Log("This object \"" + transform.name + "\" has unpredicted euler angles: " + transform.eulerAngles.y, transform.gameObject );
+                break;
         }
-
     }
 
     IEnumerator ExplosionActive(){
@@ -47,6 +69,10 @@ public class ElementalSpell : DamagingSpell
         // Explosion.gameObject.SetActive(true);
         Instantiate(_explosionNova, this.gameObject.transform );
         yield return new WaitForSeconds(_explosionTime);
-        Destroy( this.gameObject );
+        InitiateDeath();
+    }
+
+    void InitiateDeath(){
+        Destroy(gameObject);
     }
 }

@@ -199,7 +199,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124028682
 GameObject:
@@ -945,7 +945,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &965303847
 GameObject:
@@ -2666,7 +2666,7 @@ Transform:
   - {fileID: 1303243134}
   - {fileID: 1692164219}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1692164218
 GameObject:
@@ -3332,8 +3332,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9047166618331342067}
-        m_TargetAssemblyTypeName: SpellCast, Assembly-CSharp
-        m_MethodName: CreateSpell
+        m_TargetAssemblyTypeName: SpellChecker, Assembly-CSharp
+        m_MethodName: CheckSpellName
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3359,7 +3359,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1790003218
 GameObject:
@@ -3569,64 +3569,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3361498940672496563, guid: 5848d9baebbf2194db934170c02858c3, type: 3}
   m_PrefabInstance: {fileID: 1914523592}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2011915879
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.79357505
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 955677580366717037, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6762728872827118846, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
-      propertyPath: m_Name
-      value: "\u043F\u0440\u0438\u0437\u044B\u0432 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430\u043B\u044F
-        \u043E\u0433\u043D\u044F"
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2b85db4f8d4e2f44d812a4162f22299e, type: 3}
 --- !u!1001 &2037529651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3784,16 +3726,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1561543364570296638}
+  - component: {fileID: 9047166618331342067}
   - component: {fileID: 2989493851006557854}
   - component: {fileID: 7866117825888366911}
   - component: {fileID: 1997140953943442845}
   - component: {fileID: 9047166618331342061}
-  - component: {fileID: 9047166618331342062}
   - component: {fileID: 9047166618331342063}
+  - component: {fileID: 9047166618331342062}
   - component: {fileID: 9047166618331342064}
   - component: {fileID: 9047166618331342068}
   - component: {fileID: 9047166618331342066}
-  - component: {fileID: 9047166618331342067}
+  - component: {fileID: 9047166618331342069}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -3924,7 +3867,7 @@ Transform:
   m_Children:
   - {fileID: 4052439240965404843}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1609577637769484935
 RectTransform:
@@ -4751,8 +4694,12 @@ GameObject:
   - component: {fileID: 826310829950587911}
   - component: {fileID: 8166556172660921580}
   - component: {fileID: 8750921824313583366}
+  - component: {fileID: 8750921824313583370}
+  - component: {fileID: 8750921824313583369}
+  - component: {fileID: 8750921824313583368}
+  - component: {fileID: 8750921824313583367}
   m_Layer: 6
-  m_Name: Enemy Hard
+  m_Name: Frost Mage
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4893,7 +4840,7 @@ Transform:
   m_Children:
   - {fileID: 1609577637769484935}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8750921824313583366
 MonoBehaviour:
@@ -4911,6 +4858,59 @@ MonoBehaviour:
   _currentHealth: 100
   damageReduction: 0000000000000000
   dotList: 
+--- !u!114 &8750921824313583367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891467899112438527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae6b2a0ce9234b4195e57a24e53f38e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8750921824313583368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891467899112438527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a094d74699ef4da42a2e2caed476bcec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsAbleToMove: 1
+--- !u!114 &8750921824313583369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891467899112438527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd16efc2ce0575b45b4bb478ce9b9450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpellBook:
+  - {fileID: 11400000, guid: 93bceadc79d0acd43ba38b1dc79a8c22, type: 2}
+  - {fileID: 11400000, guid: 99b991eb1a5b5104081b15ebf54321f6, type: 2}
+--- !u!114 &8750921824313583370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891467899112438527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc3c2640d774e24281d71b57765a8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBuff: {fileID: 0}
 --- !u!1 &8820357195040225813
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,10 +5106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57cb1a51ec4cb474091ddece460610f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellsDictionaryIce: {fileID: 11400000, guid: 93bceadc79d0acd43ba38b1dc79a8c22, type: 2}
-  spellsDictionaryFire: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
-  spellsDictionaryLight: {fileID: 11400000, guid: 91497fa7142fd6841940b6ed498e5316, type: 2}
-  spellsDictionaryDark: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}
+  spellListIce: {fileID: 11400000, guid: 93bceadc79d0acd43ba38b1dc79a8c22, type: 2}
+  spellListFire: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
+  spellListLight: {fileID: 11400000, guid: 91497fa7142fd6841940b6ed498e5316, type: 2}
+  spellListDark: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}
   inputComponent: {fileID: 372127700}
   image: {fileID: 372127701}
 --- !u!114 &9047166618331342068
@@ -5125,3 +5125,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentBuff: {fileID: 0}
+--- !u!114 &9047166618331342069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427178551944807160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae6b2a0ce9234b4195e57a24e53f38e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

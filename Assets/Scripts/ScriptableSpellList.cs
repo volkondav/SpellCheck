@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System;
 
 
-[CreateAssetMenu(menuName = "Spells Dictionary")]
-public class ScriptableSpellsDictionary : ScriptableObject
+[CreateAssetMenu(menuName = "Spell List")]
+public class ScriptableSpellList : ScriptableObject
 {
     public List<GameObject> spellPrefabs;
     // public Dictionary<GameObject,ScriptableObject> spellDictionary;
