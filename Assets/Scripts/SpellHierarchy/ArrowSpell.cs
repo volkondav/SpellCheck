@@ -3,7 +3,7 @@ using UnityEngine;
 public class ArrowSpell : DamagingSpell
 {
     // [SerializeField] private ScriptableArrowSpell _spellAttribute;
-    [SerializeField] private float _spellSpeed;
+    public float ArrowSpellSpeed;
     private Rigidbody2D spellBody;
     private float spellXPosition;
 
@@ -18,10 +18,10 @@ public class ArrowSpell : DamagingSpell
         // spellBody.velocity = new Vector2(_spellSpeed,0);
         switch ( transform.eulerAngles.y ){
             case 0:
-                spellBody.velocity = new Vector2(_spellSpeed, 0);
+                spellBody.velocity = new Vector2(ArrowSpellSpeed, 0);
                 break;
             case 180:
-                spellBody.velocity = new Vector2(_spellSpeed * -1, 0);
+                spellBody.velocity = new Vector2(ArrowSpellSpeed * -1, 0);
                 break;
             default:
                 Debug.Log("This object \"" + transform.name + "\" has unpredicted euler angles: " + transform.eulerAngles.y, transform.gameObject );

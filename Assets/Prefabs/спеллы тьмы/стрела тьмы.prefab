@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6186928959245815824}
   - component: {fileID: 7787625273335005328}
   - component: {fileID: 7740017029080307850}
-  - component: {fileID: -5818139246781365912}
   - component: {fileID: -1313680996866124208}
+  - component: {fileID: 4354761053876224098}
   m_Layer: 10
   m_Name: "\u0441\u0442\u0440\u0435\u043B\u0430 \u0442\u044C\u043C\u044B"
   m_TagString: Untagged
@@ -187,7 +187,7 @@ MonoBehaviour:
   DirectDamage: 7
   DamageOT: 0
   DOTTimes: 0
-  _spellSpeed: 12
+  ArrowSpellSpeed: 10
 --- !u!114 &-5818139246781365912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,3 +212,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2607bdc2f2162ca48b9b9bf13c4321d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4354761053876224098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8495114357828643257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9757d66f7ccd484abd79448a0ac62a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowToSpawn: {fileID: 8495114357828643257}
+  isAbleToInteract: 1

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8283309574972574986}
   - component: {fileID: 7606698882271301028}
   - component: {fileID: 710597870763690356}
-  - component: {fileID: 4158194196580984124}
+  - component: {fileID: 6039565013703082090}
   m_Layer: 8
   m_Name: "\u043F\u0440\u0438\u0437\u044B\u0432 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430\u043B\u044F
     \u043E\u0433\u043D\u044F"
@@ -155,7 +155,7 @@ MonoBehaviour:
   _spellSpeed: 3
   _explosionTime: 3
   _explosionNova: {fileID: 2065986578781283409, guid: ddf30b6fcfc395b44ba21c7afa33bb5c, type: 3}
---- !u!114 &4158194196580984124
+--- !u!114 &6039565013703082090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6762728872827118846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7cfe270ad071d345ad97c90ee3604d1, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b69f30fb2dc5f48ace93cb1374e15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _darkSpellList: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}

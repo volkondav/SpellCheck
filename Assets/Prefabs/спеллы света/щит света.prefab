@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9150500838837891381}
   - component: {fileID: 3015070712899839172}
   - component: {fileID: 2012281129192729275}
-  - component: {fileID: 1563631033804162900}
+  - component: {fileID: 5773101674550114488}
   m_Layer: 9
   m_Name: "\u0449\u0438\u0442 \u0441\u0432\u0435\u0442\u0430"
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.06529224, y: -0.1888808}
@@ -151,7 +151,7 @@ MonoBehaviour:
   shieldDuration: 30
   remainingShieldDuration: 0
   damageReductionValues: 0500000003000000
---- !u!114 &1563631033804162900
+--- !u!114 &5773101674550114488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6868580771691687402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88694de846d91a64f83f0b34ab428159, type: 3}
+  m_Script: {fileID: 11500000, guid: 86160497094453b4f97c75c35ae7ea1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lightRing: {fileID: 7660379087125980184, guid: 161efee13def1194c9c90a0bff49f578, type: 3}
+  lightRay: {fileID: 8291964458210500587, guid: 88119096e32ba9845aaaa5d4bcbc14ec, type: 3}

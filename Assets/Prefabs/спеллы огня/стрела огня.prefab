@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 3170397067031322416}
   - component: {fileID: -9069644535337974953}
   - component: {fileID: 8326999249904278841}
-  - component: {fileID: -4694107026421990863}
   - component: {fileID: -5412981312358057734}
+  - component: {fileID: 8234602973806996745}
   m_Layer: 8
   m_Name: "\u0441\u0442\u0440\u0435\u043B\u0430 \u043E\u0433\u043D\u044F"
   m_TagString: Untagged
@@ -187,7 +187,7 @@ MonoBehaviour:
   DirectDamage: 0
   DamageOT: 3
   DOTTimes: 5
-  _spellSpeed: 7
+  ArrowSpellSpeed: 7
 --- !u!114 &-4694107026421990863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,5 +212,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2607bdc2f2162ca48b9b9bf13c4321d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8234602973806996745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4372869314271501201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b69f30fb2dc5f48ace93cb1374e15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9150500838837891381}
   - component: {fileID: 3015070712899839172}
   - component: {fileID: 2012281129192729275}
-  - component: {fileID: -7810659458610628292}
+  - component: {fileID: 737302498186989895}
   m_Layer: 8
   m_Name: "\u0449\u0438\u0442 \u043E\u0433\u043D\u044F"
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.06529224, y: -0.1888808}
@@ -151,7 +151,7 @@ MonoBehaviour:
   shieldDuration: 30
   remainingShieldDuration: 0
   damageReductionValues: 0000000005000000
---- !u!114 &-7810659458610628292
+--- !u!114 &737302498186989895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6868580771691687402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7cfe270ad071d345ad97c90ee3604d1, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b69f30fb2dc5f48ace93cb1374e15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _darkSpellList: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}

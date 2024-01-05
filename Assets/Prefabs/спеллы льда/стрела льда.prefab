@@ -187,7 +187,7 @@ MonoBehaviour:
   DirectDamage: 10
   DamageOT: 0
   DOTTimes: 0
-  _spellSpeed: 3
+  ArrowSpellSpeed: 10
 --- !u!114 &-1382202186678285303
 MonoBehaviour:
   m_ObjectHideFlags: 0

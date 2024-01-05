@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2678954332958398464}
   - component: {fileID: 2497996026855278187}
   - component: {fileID: 4078921957373893403}
-  - component: {fileID: -17004394843854205}
+  - component: {fileID: -7473912310269817973}
   m_Layer: 10
   m_Name: "\u043A\u043E\u043B\u044C\u0446\u043E \u0442\u044C\u043C\u044B"
   m_TagString: Untagged
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2607bdc2f2162ca48b9b9bf13c4321d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-17004394843854205
+--- !u!114 &-7473912310269817973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,6 +164,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7660379087125980184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1eeca51e2d68f1429fb9d39a15482eb, type: 3}
+  m_Script: {fileID: 11500000, guid: f9757d66f7ccd484abd79448a0ac62a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowToSpawn: {fileID: 8495114357828643257, guid: 1a4fbfd5016c78d43b14f3d0fb47de11, type: 3}
+  isAbleToInteract: 1
