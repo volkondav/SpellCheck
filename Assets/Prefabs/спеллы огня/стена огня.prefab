@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8856872153723966101}
   - component: {fileID: 2678954332958398464}
   - component: {fileID: 3828200610047132929}
-  - component: {fileID: 2453636975503729220}
+  - component: {fileID: -5739099139804803274}
   m_Layer: 8
   m_Name: "\u0441\u0442\u0435\u043D\u0430 \u043E\u0433\u043D\u044F"
   m_TagString: Untagged
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellCharacteristics: 0
   _durationTime: 20
---- !u!114 &2453636975503729220
+--- !u!114 &-5739099139804803274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,6 +215,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7660379087125980184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
+  m_Script: {fileID: 11500000, guid: d7cfe270ad071d345ad97c90ee3604d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _darkSpellList: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}
+  _fireSpellList: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}

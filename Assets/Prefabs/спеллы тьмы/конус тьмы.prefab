@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1871278289306011287}
   - component: {fileID: 1475028365697142719}
   - component: {fileID: 2678954332958398464}
-  - component: {fileID: 2497996026855278187}
-  - component: {fileID: 4078921957373893403}
   - component: {fileID: 5119557734896837175}
+  - component: {fileID: 2497996026855278187}
+  - component: {fileID: 4048851586268734375}
+  - component: {fileID: 4078921957373893403}
   m_Layer: 10
   m_Name: "\u043A\u043E\u043D\u0443\u0441 \u0442\u044C\u043C\u044B"
   m_TagString: Untagged
@@ -109,35 +110,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2497996026855278187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660379087125980184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358c10585d5427a4bbea7cdc97e0a464, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellCharacteristics: 0
-  DirectDamage: 15
-  DamageOT: 0
-  DOTTimes: 0
-  _explosionTime: 3
---- !u!114 &4078921957373893403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660379087125980184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2607bdc2f2162ca48b9b9bf13c4321d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &5119557734896837175
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -167,3 +139,44 @@ PolygonCollider2D:
       - {x: 0.17261255, y: -0.09631047}
       - {x: 0.91307014, y: -0.48594916}
       - {x: 0.9119324, y: 0.4680818}
+--- !u!114 &2497996026855278187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660379087125980184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358c10585d5427a4bbea7cdc97e0a464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellCharacteristics: 0
+  DirectDamage: 15
+  DamageOT: 0
+  DOTTimes: 0
+  _explosionTime: 3
+--- !u!114 &4048851586268734375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660379087125980184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1eeca51e2d68f1429fb9d39a15482eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4078921957373893403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660379087125980184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2607bdc2f2162ca48b9b9bf13c4321d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

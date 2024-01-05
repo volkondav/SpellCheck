@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7376860973847589382}
   - component: {fileID: 2678954332958398464}
   - component: {fileID: 3828200610047132929}
-  - component: {fileID: 2453636975503729220}
+  - component: {fileID: -3437297054416267574}
   m_Layer: 10
   m_Name: "\u0441\u0442\u0435\u043D\u0430 \u0442\u044C\u043C\u044B"
   m_TagString: Untagged
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellCharacteristics: 0
   _durationTime: 20
---- !u!114 &2453636975503729220
+--- !u!114 &-3437297054416267574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,6 +249,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7660379087125980184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
+  m_Script: {fileID: 11500000, guid: c1eeca51e2d68f1429fb9d39a15482eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

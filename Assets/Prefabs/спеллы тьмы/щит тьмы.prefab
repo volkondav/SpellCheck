@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9150500838837891381}
   - component: {fileID: 3015070712899839172}
   - component: {fileID: 2012281129192729275}
-  - component: {fileID: 1390059052243955986}
+  - component: {fileID: -7157249838587257367}
   m_Layer: 10
   m_Name: "\u0449\u0438\u0442 \u0442\u044C\u043C\u044B"
   m_TagString: Untagged
@@ -151,7 +151,7 @@ MonoBehaviour:
   shieldDuration: 30
   remainingShieldDuration: 0
   damageReductionValues: 0000000000000000
---- !u!114 &1390059052243955986
+--- !u!114 &-7157249838587257367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,6 +160,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6868580771691687402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
+  m_Script: {fileID: 11500000, guid: c1eeca51e2d68f1429fb9d39a15482eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

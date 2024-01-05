@@ -63,6 +63,7 @@ public class ArrowSpell : DamagingSpell
 
     public void HalveSpeedAndDamage()
     {
+        //print("Уменьшаю скорость и дамаг");
         _spellSpeed = _spellSpeed / 2;
         DirectDamage = DirectDamage / 2;
     }

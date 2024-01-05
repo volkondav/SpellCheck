@@ -157,16 +157,22 @@ public class SpellInteractions : MonoBehaviour
 
     public void IceIce()
     {
-        GameObject miniArrow = interactionSpellList.spellPrefabs[0];
+        GameObject miniArrow = interactionSpellList.spellPrefabs[0]; // переделать
         var positions = new List<float> { 1.5f, -0.5f, -2.5f };
 
         positions.Remove(transform.position.y);
-        float randomPosition = positions[Random.Range(0, positions.Count - 1)];
+        float randomPosition = positions[Random.Range(0, positions.Count)];
         Vector3 spawnPosition = new Vector3(transform.position.x, randomPosition);
 
         miniArrow = Instantiate(miniArrow, spawnPosition, transform.rotation);
         miniArrow.GetComponent<ArrowSpell>().HalveSpeedAndDamage();
 
+        //positions.Remove(spawnPosition.y); // если требуется, чтобы мини стрелы от одной стрелы, не спавнились на одной линии
+        randomPosition = positions[Random.Range(0, positions.Count)];
+        spawnPosition = new Vector3(transform.position.x, randomPosition);
+
+        miniArrow = Instantiate(miniArrow, spawnPosition, transform.rotation);
+        miniArrow.GetComponent<ArrowSpell>().HalveSpeedAndDamage();
     }
 
     public void LightLight()

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1762179661892670415}
   - component: {fileID: 2678954332958398464}
   - component: {fileID: 2497996026855278187}
+  - component: {fileID: 7633213545316468846}
   - component: {fileID: 4078921957373893403}
   m_Layer: 9
   m_Name: "\u043A\u043E\u043B\u044C\u0446\u043E \u0441\u0432\u0435\u0442\u0430"
@@ -142,6 +143,19 @@ MonoBehaviour:
   DamageOT: 0
   DOTTimes: 0
   _explosionTime: 3
+--- !u!114 &7633213545316468846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660379087125980184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88694de846d91a64f83f0b34ab428159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lightRing: {fileID: 7660379087125980184}
 --- !u!114 &4078921957373893403
 MonoBehaviour:
   m_ObjectHideFlags: 0

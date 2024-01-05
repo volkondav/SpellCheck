@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3887871862823729231}
   - component: {fileID: 479027390431097951}
   - component: {fileID: 3695493812556555080}
+  - component: {fileID: 5587988623480670109}
   - component: {fileID: -3761054380198621861}
   m_Layer: 8
   m_Name: "\u043A\u043E\u043B\u044C\u0446\u043E \u043E\u0433\u043D\u044F"
@@ -142,6 +143,20 @@ MonoBehaviour:
   DamageOT: 10
   DOTTimes: 3
   _explosionTime: 3
+--- !u!114 &5587988623480670109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065986578781283409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cfe270ad071d345ad97c90ee3604d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _darkSpellList: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}
+  _fireSpellList: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
 --- !u!114 &-3761054380198621861
 MonoBehaviour:
   m_ObjectHideFlags: 0

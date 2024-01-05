@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3170397067031322416}
   - component: {fileID: -9069644535337974953}
   - component: {fileID: 8326999249904278841}
-  - component: {fileID: 5496690342236829993}
+  - component: {fileID: -4694107026421990863}
   - component: {fileID: -5412981312358057734}
   m_Layer: 8
   m_Name: "\u0441\u0442\u0440\u0435\u043B\u0430 \u043E\u0433\u043D\u044F"
@@ -188,7 +188,7 @@ MonoBehaviour:
   DamageOT: 3
   DOTTimes: 5
   _spellSpeed: 7
---- !u!114 &5496690342236829993
+--- !u!114 &-4694107026421990863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,10 +197,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4372869314271501201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d69301a138b0bfa419cec8d1e9c5c903, type: 3}
+  m_Script: {fileID: 11500000, guid: d7cfe270ad071d345ad97c90ee3604d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionSpellsDictionary: {fileID: 0}
+  _darkSpellList: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}
+  _fireSpellList: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
 --- !u!114 &-5412981312358057734
 MonoBehaviour:
   m_ObjectHideFlags: 0
