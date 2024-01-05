@@ -252,5 +252,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9757d66f7ccd484abd79448a0ac62a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowToSpawn: {fileID: 8495114357828643257, guid: 1a4fbfd5016c78d43b14f3d0fb47de11, type: 3}
+  _arrowToSpawn: {fileID: 8495114357828643257, guid: 1a4fbfd5016c78d43b14f3d0fb47de11, type: 3}
   isAbleToInteract: 1

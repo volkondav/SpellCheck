@@ -188,18 +188,6 @@ MonoBehaviour:
   DamageOT: 0
   DOTTimes: 0
   ArrowSpellSpeed: 10
---- !u!114 &-5818139246781365912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8495114357828643257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1eeca51e2d68f1429fb9d39a15482eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-1313680996866124208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,5 +212,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9757d66f7ccd484abd79448a0ac62a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowToSpawn: {fileID: 8495114357828643257}
+  _arrowToSpawn: {fileID: 8495114357828643257}
   isAbleToInteract: 1

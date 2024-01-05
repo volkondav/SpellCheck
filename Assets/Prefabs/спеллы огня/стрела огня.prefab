@@ -188,20 +188,6 @@ MonoBehaviour:
   DamageOT: 3
   DOTTimes: 5
   ArrowSpellSpeed: 7
---- !u!114 &-4694107026421990863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4372869314271501201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7cfe270ad071d345ad97c90ee3604d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _darkSpellList: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}
-  _fireSpellList: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
 --- !u!114 &-5412981312358057734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,3 +212,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b69f30fb2dc5f48ace93cb1374e15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _darkSpellList: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}
+  _fireSpellList: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}

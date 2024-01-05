@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2678954332958398464}
   - component: {fileID: 5119557734896837175}
   - component: {fileID: -7079140695043840994}
+  - component: {fileID: 4066955536301673826}
   m_Layer: 10
   m_Name: "\u043A\u043E\u043D\u0443\u0441 \u0442\u044C\u043C\u044B"
   m_TagString: Untagged
@@ -149,5 +150,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9757d66f7ccd484abd79448a0ac62a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowToSpawn: {fileID: 8495114357828643257, guid: 1a4fbfd5016c78d43b14f3d0fb47de11, type: 3}
+  _arrowToSpawn: {fileID: 8495114357828643257, guid: 1a4fbfd5016c78d43b14f3d0fb47de11, type: 3}
   isAbleToInteract: 1
+--- !u!114 &4066955536301673826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660379087125980184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358c10585d5427a4bbea7cdc97e0a464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellCharacteristics: 0
+  DirectDamage: 15
+  DamageOT: 0
+  DOTTimes: 0
+  _explosionTime: 3

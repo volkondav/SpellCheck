@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightInteractions : MonoBehaviour
+public class LightInteractions : ElementalInteractions
 {
     [SerializeField] private GameObject _lightRay; // _ (нижнее подчёркивание) в именах переменных использовать для приватных переменных в определении класса; основная задача -- различать приватные переменные из класса и из функицй / методов
     [SerializeField] private GameObject _lightRing;
-    private Rigidbody2D spellBody;
-    private SpriteRenderer spellSprite;
-    private float speedIncrease = 1.5f;
+    private Rigidbody2D _spellBody;
+    private SpriteRenderer _spellSprite;
+    private float _speedIncrease = 1.5f;
 
     void Awake(){
-        spellBody = GetComponent<Rigidbody2D>();
-        spellSprite = GetComponent<SpriteRenderer>();
+        _spellBody = GetComponent<Rigidbody2D>();
+        _spellSprite = GetComponent<SpriteRenderer>();
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
+        Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
         switch ( collision.gameObject.layer ){
             case 6: // на время написания кода layer 6 -- это слой Characters
                 // DealDamage(collision);
@@ -26,29 +26,22 @@ public class LightInteractions : MonoBehaviour
                 LightWithIce( collision.ClosestPoint( this.transform.position ) );
                 break;           
             case 8: // на время написания кода layer 8 -- это слой огонь
+                InitiateSelfDestruction( collision.gameObject );
                 LightWithFire( collision );
-                InitiateDeath( collision.gameObject );
                 break;
             case 9: // на время напиания кода layer 9 -- этой слой свет
                 // Debug.Log("Entered case 9" , this.gameObject);
-                if ( spellBody.velocity.x != 0 )
+                if ( _spellBody.velocity.x != 0 )
                     LightWithLight();
                 break;
             case 10: // на время напиания кода layer 9 -- этой слой тьма
-                InitiateDeath( collision.gameObject );
+                InitiateSelfDestruction( collision.gameObject );
                 break;
 
             default:
                 Debug.Log( "Could not retrieve a valid layer for: " + collision.name, collision.gameObject );
                 break;
             }
-        // if ( collision.gameObject.layer == 8 ) // на время написания кода layer 8 -- это слой Player
-        //     DealDamage(collision);
-    }
-    public void InitiateDeath( GameObject collisionGameObject ){
-        // print("GameObject with name \"" + gameObject.name + "\" was destroyed when colliding with layer " + layer);
-        Debug.Log(this.gameObject.name + " was destroyed when colliding with " + collisionGameObject.name, collisionGameObject );
-        Destroy(gameObject);
     }
 
     void LightWithIce( Vector3 spawnPosition ){
@@ -56,14 +49,15 @@ public class LightInteractions : MonoBehaviour
     }
 
     void LightWithLight(){
-        spellSprite.color = new Color( spellSprite.color.r, spellSprite.color.g * 0.8f, spellSprite.color.b * 0.5f, spellSprite.color.a );
-        spellBody.velocity = new Vector2( spellBody.velocity.x * speedIncrease , 0 );
-        // Debug.Log("Object's x velocity: " + spellBody.velocity.x, this.gameObject);
+        _spellSprite.color = new Color( _spellSprite.color.r, _spellSprite.color.g * 0.8f, _spellSprite.color.b * 0.5f, _spellSprite.color.a );
+        _spellBody.velocity = new Vector2( _spellBody.velocity.x * _speedIncrease , 0 );
+        // Debug.Log("Object's x velocity: " + _spellBody.velocity.x, this.gameObject);
     }
     public void LightWithFire( Collider2D collision )
     {
         Vector3 contactPoint = gameObject.GetComponent<Collider2D>().ClosestPoint( collision.transform.position );
         GameObject lightRing = Instantiate(_lightRing, contactPoint, new Quaternion());
-        lightRing.layer = 0;
+        // Destroy( lightRing.GetComponent<LightInteractions>() );
+        // lightRing.layer = 0;
     }
 }

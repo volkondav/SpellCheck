@@ -188,19 +188,6 @@ MonoBehaviour:
   DamageOT: 0
   DOTTimes: 0
   ArrowSpellSpeed: 15
---- !u!114 &-2133082230671234007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8495114357828643257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88694de846d91a64f83f0b34ab428159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lightRing: {fileID: 7660379087125980184, guid: 161efee13def1194c9c90a0bff49f578, type: 3}
 --- !u!114 &-1313680996866124208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,4 +212,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86160497094453b4f97c75c35ae7ea1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightRay: {fileID: 8291964458210500587, guid: 88119096e32ba9845aaaa5d4bcbc14ec, type: 3}
+  _lightRay: {fileID: 8291964458210500587, guid: 88119096e32ba9845aaaa5d4bcbc14ec, type: 3}
+  _lightRing: {fileID: 7660379087125980184, guid: 161efee13def1194c9c90a0bff49f578, type: 3}

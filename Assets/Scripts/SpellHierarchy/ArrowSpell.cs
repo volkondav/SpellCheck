@@ -4,12 +4,12 @@ public class ArrowSpell : DamagingSpell
 {
     // [SerializeField] private ScriptableArrowSpell _spellAttribute;
     public float ArrowSpellSpeed;
-    private Rigidbody2D spellBody;
+    private Rigidbody2D _spellBody;
     private float spellXPosition;
 
     void Awake()
     {
-        spellBody = GetComponent<Rigidbody2D>();
+        _spellBody = GetComponent<Rigidbody2D>();
         // _spellSpeed = _spellAttribute.spellSpeed;
         // damage = _spellAttribute.damage;
     }
@@ -18,10 +18,10 @@ public class ArrowSpell : DamagingSpell
         // spellBody.velocity = new Vector2(_spellSpeed,0);
         switch ( transform.eulerAngles.y ){
             case 0:
-                spellBody.velocity = new Vector2(ArrowSpellSpeed, 0);
+                _spellBody.velocity = new Vector2(ArrowSpellSpeed, 0);
                 break;
             case 180:
-                spellBody.velocity = new Vector2(ArrowSpellSpeed * -1, 0);
+                _spellBody.velocity = new Vector2(ArrowSpellSpeed * -1, 0);
                 break;
             default:
                 Debug.Log("This object \"" + transform.name + "\" has unpredicted euler angles: " + transform.eulerAngles.y, transform.gameObject );
@@ -63,8 +63,7 @@ public class ArrowSpell : DamagingSpell
 
     public void HalveSpeedAndDamage()
     {
-        //print("Уменьшаю скорость и дамаг");
-        _spellSpeed = _spellSpeed / 2;
-        DirectDamage = DirectDamage / 2;
+        ArrowSpellSpeed /= 2;
+        DirectDamage /= 2;
     }
 }

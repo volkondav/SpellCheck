@@ -184,4 +184,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86160497094453b4f97c75c35ae7ea1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightRay: {fileID: 8291964458210500587, guid: 88119096e32ba9845aaaa5d4bcbc14ec, type: 3}
+  _lightRay: {fileID: 8291964458210500587, guid: 88119096e32ba9845aaaa5d4bcbc14ec, type: 3}
+  _lightRing: {fileID: 7660379087125980184, guid: 161efee13def1194c9c90a0bff49f578, type: 3}

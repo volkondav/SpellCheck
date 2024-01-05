@@ -184,10 +184,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellCharacteristics: 0
-  DirectDamage: 1
+  DirectDamage: 10
   DamageOT: 0
   DOTTimes: 0
-  _spellSpeed: 3
+  ArrowSpellSpeed: 10
 --- !u!114 &-1313680996866124208
 MonoBehaviour:
   m_ObjectHideFlags: 0

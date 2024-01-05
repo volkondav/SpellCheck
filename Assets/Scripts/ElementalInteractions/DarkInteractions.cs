@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class DarkInteractions : MonoBehaviour
+public class DarkInteractions : ElementalInteractions
 {
-    [SerializeField] private GameObject arrowToSpawn;
-    private GameObject spawnedArrow;
+    [SerializeField] private GameObject _arrowToSpawn;
     public bool isAbleToInteract = true;
     
     void OnTriggerEnter2D(Collider2D collision)
@@ -18,14 +17,14 @@ public class DarkInteractions : MonoBehaviour
                 // DealDamage(collision);
                 break;   
             case 7: // на время написания кода layer 7 -- это слой лёд
-                InitiateDeath( collision.gameObject );
+                InitiateSelfDestruction( collision.gameObject );
                 break;           
             case 8: // на время написания кода layer 8 -- это слой огонь
-                InitiateDeath( collision.gameObject );
+                InitiateSelfDestruction( collision.gameObject );
                 break;
             case 9: // на время напиания кода layer 9 -- этой слой свет
                 // Debug.Log("Entered case 9" , this.gameObject);
-                InitiateDeath( collision.gameObject );
+                InitiateSelfDestruction( collision.gameObject );
                 break;
             case 10: // на время напиания кода layer 9 -- этой слой тьма
                 if ( isAbleToInteract && collision.GetComponent<DarkInteractions>() != null ){
@@ -40,13 +39,6 @@ public class DarkInteractions : MonoBehaviour
                 Debug.Log( "Could not retrieve a valid layer for: " + collision.name, collision.gameObject );
                 break;
             }
-        // if ( collision.gameObject.layer == 8 ) // на время написания кода layer 8 -- это слой Player
-        //     DealDamage(collision);
-    }
-    public void InitiateDeath( GameObject collisionGameObject ){
-        // print("GameObject with name \"" + gameObject.name + "\" was destroyed when colliding with layer " + layer);
-        // Debug.Log(this.gameObject.name + " was destroyed when colliding with " + collisionGameObject.name, collisionGameObject );
-        Destroy( gameObject );
     }
 
     void Awake(){
@@ -54,7 +46,8 @@ public class DarkInteractions : MonoBehaviour
     }
 
     void DarkWithDark( Vector3 spawnPosition ){
-        spawnedArrow = Instantiate( arrowToSpawn, spawnPosition , new Quaternion() );
+
+        GameObject spawnedArrow = Instantiate( _arrowToSpawn, spawnPosition , new Quaternion() );
         // код ниже срабатывает раньше, чем Awake() у стрелы, которая спавнится строкой выше
 
         // turn off interaction
@@ -73,12 +66,17 @@ public class DarkInteractions : MonoBehaviour
         // change scale
         spawnedArrow.transform.localScale = new Vector3( 0.5f, 0.5f );
 
+        // change damage and speed
+        spawnedArrow.GetComponent<ArrowSpell>().HalveSpeedAndDamage();
+
+        /* 
         // change damage
-        spawnedArrow.GetComponent<DamagingSpell>().DirectDamage = (int)math.round( spawnedArrow.GetComponent<DamagingSpell>().DirectDamage * 0.5f );
+        _spawnedArrow.GetComponent<DamagingSpell>().DirectDamage = (int)math.round( _spawnedArrow.GetComponent<DamagingSpell>().DirectDamage * 0.5f );
 
         // change speed
         // spawnedArrow.GetComponent<Rigidbody2D>().velocity = spawnedArrow.GetComponent<Rigidbody2D>().velocity * 0.5f;
-        spawnedArrow.GetComponent<ArrowSpell>().ArrowSpellSpeed *= 0.5f;
+        _spawnedArrow.GetComponent<ArrowSpell>().ArrowSpellSpeed *= 0.5f;
         // Debug.Log( "Object's x velocity: " + spawnedArrow.GetComponent<Rigidbody2D>().velocity.x, spawnedArrow );
+        */
     }
 }

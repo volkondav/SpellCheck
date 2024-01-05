@@ -3,19 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireInteractions : MonoBehaviour
+public class FireInteractions : ElementalInteractions
 {
     [SerializeField] private ScriptableSpellList _darkSpellList;
     [SerializeField] private ScriptableSpellList _fireSpellList;
-    private Rigidbody2D spellBody;
-    private SpriteRenderer spellSprite;
+    private Rigidbody2D _spellBody;
+    private SpriteRenderer _spellSprite;
     private DamagingSpell spellDamageComponent;
-    private float speedDecrease = 0.6f;
-    private float damageIncrease = 1.2f;
+    private float _speedDecrease = 0.6f;
+    private float _damageIncrease = 1.2f;
 
     void Awake(){
-        spellBody = GetComponent<Rigidbody2D>();
-        spellSprite = GetComponent<SpriteRenderer>();
+        _spellBody = GetComponent<Rigidbody2D>();
+        _spellSprite = GetComponent<SpriteRenderer>();
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,7 +25,7 @@ public class FireInteractions : MonoBehaviour
                 // DealDamage(collision);
                 break;   
             case 7: // на время написания кода layer 7 -- это слой лёд
-                InitiateDeath( collision.gameObject );
+                InitiateSelfDestruction( collision.gameObject );
                 break;           
             case 8: // на время написания кода layer 8 -- это слой огонь
                 // InitiateDeath( collision.gameObject );
@@ -34,7 +34,7 @@ public class FireInteractions : MonoBehaviour
                 break;
             case 9: // на время напиания кода layer 9 -- этой слой свет
                 // Debug.Log("Entered case 9" , this.gameObject);
-                InitiateDeath( collision.gameObject );
+                InitiateSelfDestruction( collision.gameObject );
                 break;
             case 10: // на время напиания кода layer 9 -- этой слой тьма
                 FireWithDark( collision );
@@ -43,19 +43,12 @@ public class FireInteractions : MonoBehaviour
                 Debug.Log( "Could not retrieve a valid layer for: " + collision.name, collision.gameObject );
                 break;
             }
-        // if ( collision.gameObject.layer == 8 ) // на время написания кода layer 8 -- это слой Player
-        //     DealDamage(collision);
-    }
-    public void InitiateDeath( GameObject collisionGameObject ){
-        // print("GameObject with name \"" + gameObject.name + "\" was destroyed when colliding with layer " + layer);
-        // Debug.Log(this.gameObject.name + " was destroyed when colliding with " + collisionGameObject.name, collisionGameObject );
-        Destroy(gameObject);
     }
 
     void FireWithFire(){
-        spellSprite.color = new Color( spellSprite.color.r * 0.75f, spellSprite.color.g * 0.5f, spellSprite.color.b * 0.5f, spellSprite.color.a );
-        spellDamageComponent.DamageOT = (int)Math.Round( spellDamageComponent.DamageOT * damageIncrease );
-        spellBody.velocity = new Vector2( spellBody.velocity.x * speedDecrease , 0 );
+        _spellSprite.color = new Color( _spellSprite.color.r * 0.75f, _spellSprite.color.g * 0.5f, _spellSprite.color.b * 0.5f, _spellSprite.color.a );
+        spellDamageComponent.DamageOT = (int)Math.Round( spellDamageComponent.DamageOT * _damageIncrease );
+        _spellBody.velocity = new Vector2( _spellBody.velocity.x * _speedDecrease , 0 );
         // Debug.Log("Object's DamageOT: " + spellDamageComponent.DamageOT, this.gameObject);
         // Debug.Log("Object's x velocity: " + spellBody.velocity.x, this.gameObject);        
     }
