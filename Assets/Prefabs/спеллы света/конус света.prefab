@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2497996026855278187}
   - component: {fileID: 4078921957373893403}
   - component: {fileID: 5119557734896837175}
+  - component: {fileID: -1026341195127250933}
   m_Layer: 9
   m_Name: "\u043A\u043E\u043D\u0443\u0441 \u0441\u0432\u0435\u0442\u0430"
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7660379087125980184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -167,3 +168,16 @@ PolygonCollider2D:
       - {x: 0.17261255, y: -0.09631047}
       - {x: 0.91307014, y: -0.48594916}
       - {x: 0.9119324, y: 0.4680818}
+--- !u!114 &-1026341195127250933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660379087125980184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86160497094453b4f97c75c35ae7ea1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightRay: {fileID: 8291964458210500587, guid: 88119096e32ba9845aaaa5d4bcbc14ec, type: 3}
