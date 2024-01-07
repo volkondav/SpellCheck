@@ -16,7 +16,7 @@ public class LightInteractions : ElementalInteractions
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
+        // Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
         switch ( collision.gameObject.layer ){
             case 6: // на время написания кода layer 6 -- это слой Characters
                 // DealDamage(collision);
@@ -26,7 +26,8 @@ public class LightInteractions : ElementalInteractions
                 LightWithIce( collision.ClosestPoint( this.transform.position ) );
                 break;           
             case 8: // на время написания кода layer 8 -- это слой огонь
-                InitiateSelfDestruction( collision.gameObject );
+                // InitiateSelfDestruction( collision.gameObject );
+                StartCoroutine( DelayedSelfDestruction( collision.gameObject ) );
                 LightWithFire( collision );
                 break;
             case 9: // на время напиания кода layer 9 -- этой слой свет
@@ -56,7 +57,8 @@ public class LightInteractions : ElementalInteractions
     public void LightWithFire( Collider2D collision )
     {
         Vector3 contactPoint = gameObject.GetComponent<Collider2D>().ClosestPoint( collision.transform.position );
-        GameObject lightRing = Instantiate(_lightRing, contactPoint, new Quaternion());
+        // GameObject lightRing = Instantiate(_lightRing, contactPoint, new Quaternion());
+        Instantiate(_lightRing, contactPoint, new Quaternion());
         // Destroy( lightRing.GetComponent<LightInteractions>() );
         // lightRing.layer = 0;
     }

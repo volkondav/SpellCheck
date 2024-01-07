@@ -12,11 +12,11 @@ using UnityEngine.UIElements;
 
 public class SpellRenderer : MonoBehaviour
 {
-    [SerializeField] private string currentString;
-    [SerializeField] private RectTransform inputTransform;
-    [SerializeField] private TMP_InputField inputComponent;
-    [SerializeField] private CanvasGroup canvasgroupComponent;
-    [SerializeField] private PlayerSpellEvents playerSpellEvents;
+    [SerializeField] private string _currentString;
+    [SerializeField] private RectTransform _inputTransform;
+    [SerializeField] private TMP_InputField _inputComponent;
+    [SerializeField] private CanvasGroup _canvasgroupComponent;
+    [SerializeField] private PlayerSpellEvents _playerSpellEvents;
 
     private PlayerMovement _playerMovement;
     // private int timesTextChanged = -1;
@@ -34,14 +34,14 @@ public class SpellRenderer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inputComponent.ActivateInputField();
+        _inputComponent.ActivateInputField();
         UpdateCaretPosition();
         // print(inputComponent.caretPosition);
-        if ( currentString == "" )
+        if ( _currentString == "" )
             // inputTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0); создаёт неприятные ошибки в расчёте всех окон
-            canvasgroupComponent.alpha = 0;
+            _canvasgroupComponent.alpha = 0;
         else
-            canvasgroupComponent.alpha = 1;
+            _canvasgroupComponent.alpha = 1;
             
     }
         // вот что я понял:
@@ -49,7 +49,7 @@ public class SpellRenderer : MonoBehaviour
         // 2. ивент TextChanged обновляет позицию каретки сркытно в самом конце
     public void UpdateCaretPosition(){
         if ( _playerMovement.newSideCaretPosition != -1 ){
-             inputComponent.caretPosition = _playerMovement.newSideCaretPosition;
+             _inputComponent.caretPosition = _playerMovement.newSideCaretPosition;
             _playerMovement.newSideCaretPosition = -1;
         }
         // print("Updating caret position: " + inputComponent.caretPosition + "" + timesTextChanged);
@@ -68,7 +68,7 @@ public class SpellRenderer : MonoBehaviour
 
         if ( s.EndsWith("  "))
             s = s.Remove( s.Length - 1 );
-        inputComponent.text = s;
+        _inputComponent.text = s;
 
         // print("End modifications: " + inputComponent.caretPosition + " " + timesTextChanged);
         // inputComponent.caretPosition = inputComponent.caretPosition - timesTextChanged;
@@ -78,15 +78,15 @@ public class SpellRenderer : MonoBehaviour
         //     myCaretPosition--;
         // timesTextChanged--;
 
-        currentString = s;
-        inputComponent.ForceLabelUpdate(); // обязательный форс апдейт, без него не учитывается длина текста в inputComponent.preferredWidth
+        _currentString = s;
+        _inputComponent.ForceLabelUpdate(); // обязательный форс апдейт, без него не учитывается длина текста в inputComponent.preferredWidth
         // textComponent.ForceMeshUpdate(); наверное, необязательный форс апдейт, но если будут ошибки, то можно включить
         // print("After force: " + inputComponent.caretPosition + " " + timesTextChanged);
 
         if ( s.EndsWith(' ') )
-            inputTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Horizontal, 22f + inputComponent.preferredWidth );
+            _inputTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Horizontal, 22f + _inputComponent.preferredWidth );
         else
-            inputTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Horizontal, 6f + inputComponent.preferredWidth );
+            _inputTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Horizontal, 6f + _inputComponent.preferredWidth );
 
         // inputTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Horizontal, 50 + textComponent.renderedWidth );
 
@@ -101,11 +101,11 @@ public class SpellRenderer : MonoBehaviour
         // print("Entered SubmitSpell"); нет, заходит в ивент SubmitSpell всего один раз
         s = s.Trim();
         s = s.RemoveConsecutiveCharacters(' ');
-        currentString = s;
+        _currentString = s;
         // print("From SubmitSpell: " + s);
         // inputComponent.text = ""; очистка текста происходит в SpellCaster.cs при успешном соотвествии заклинания
         // playerSpellEvents.Invoke("PlayerCastsASpell", 0);
-        playerSpellEvents.PlayerCastsASpell.Invoke(s);
+        _playerSpellEvents.PlayerCastsASpell.Invoke(s);
     }
 
 

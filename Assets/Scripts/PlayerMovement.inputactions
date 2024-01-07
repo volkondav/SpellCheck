@@ -2,7 +2,7 @@
     "name": "PlayerMovement",
     "maps": [
         {
-            "name": "Russian",
+            "name": "Movement",
             "id": "bbdddbe6-fd28-4e2b-85e2-dc37aa5e068f",
             "actions": [
                 {

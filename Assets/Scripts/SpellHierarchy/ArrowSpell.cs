@@ -12,6 +12,7 @@ public class ArrowSpell : DamagingSpell
         _spellBody = GetComponent<Rigidbody2D>();
         // _spellSpeed = _spellAttribute.spellSpeed;
         // damage = _spellAttribute.damage;
+        transform.Translate( 0, UnityEngine.Random.Range( -1f, 0 ), 0 );
     }
     void Start()
     {   
@@ -55,6 +56,12 @@ public class ArrowSpell : DamagingSpell
         //     // print("Entered if");
         // }
 
+    }
+
+    // важно, чтобы скрипт ArrowSpell стоял после скриптов DamageDealer и ElementalInteractions
+    void OnTriggerEnter2D(Collider2D collision){
+        if ( collision.gameObject.layer == 6 )
+            InitiateDeath();
     }
 
     void InitiateDeath(){

@@ -19,6 +19,7 @@ public class NovaSpell : DamagingSpell
     }
 
     IEnumerator NovaActive(){
+        // print("NovaActive started");
         yield return new WaitForSeconds(_explosionTime);
         Destroy(gameObject);
     }

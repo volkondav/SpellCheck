@@ -4883,6 +4883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAbleToMove: 1
+  TimeForOneLetter: 0.4
 --- !u!114 &8750921824313583369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4995,6 +4996,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputComponent: {fileID: 372127700}
   newSideCaretPosition: -1
+  movementActionMap:
+    m_Name: 
+    m_Id: 
+    m_Asset: {fileID: 0}
+    m_Actions: []
+    m_Bindings: []
 --- !u!114 &9047166618331342063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5058,7 +5065,7 @@ MonoBehaviour:
     m_ActionName: Russian/MoveCaret[/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Russian
+  m_DefaultActionMap: Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &9047166618331342064
@@ -5089,11 +5096,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f432a1beb74fcf24e9a3deb2dccbbef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentString: 
-  inputTransform: {fileID: 372127699}
-  inputComponent: {fileID: 372127700}
-  canvasgroupComponent: {fileID: 372127703}
-  playerSpellEvents: {fileID: 1726109217}
+  _currentString: 
+  _inputTransform: {fileID: 372127699}
+  _inputComponent: {fileID: 372127700}
+  _canvasgroupComponent: {fileID: 372127703}
+  _playerSpellEvents: {fileID: 1726109217}
 --- !u!114 &9047166618331342067
 MonoBehaviour:
   m_ObjectHideFlags: 0

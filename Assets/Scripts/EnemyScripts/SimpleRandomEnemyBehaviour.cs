@@ -8,6 +8,7 @@ public class SimpleRandomEnemyBehaviour : MonoBehaviour
     private SpellCaster enemySpellCaster;
     private GameObject currentSpellToCast;
     public bool IsAbleToMove;
+    public float TimeForOneLetter;
 
     void Awake(){
         enemySpellList = GetComponent<EnemySpellBook>().enemySpellBook[0];
@@ -44,7 +45,7 @@ public class SimpleRandomEnemyBehaviour : MonoBehaviour
 
         currentSpellToCast = enemySpellList.spellPrefabs[ Random.Range( 0, enemySpellList.spellPrefabs.Count ) ];
         // StartCoroutine( EnemyStartedCasting( currentSpellToCast.name.Length ) );
-        yield return new WaitForSeconds( currentSpellToCast.name.Length * 0.2f );
+        yield return new WaitForSeconds( currentSpellToCast.name.Length * TimeForOneLetter );
         enemySpellCaster.CastASpell( currentSpellToCast, -1 );
         StartCoroutine( StartCasting() );
         // print("Couroutine terminated");

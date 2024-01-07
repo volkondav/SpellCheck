@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1871278289306011287}
   - component: {fileID: 1475028365697142719}
+  - component: {fileID: 5119557734896837175}
   - component: {fileID: 2678954332958398464}
   - component: {fileID: 2497996026855278187}
   - component: {fileID: 4078921957373893403}
-  - component: {fileID: 5119557734896837175}
   - component: {fileID: -7534453560939522270}
   m_Layer: 7
   m_Name: "\u043A\u043E\u043D\u0443\u0441 \u043B\u044C\u0434\u0430"
@@ -89,6 +89,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &5119557734896837175
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660379087125980184}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.07333334, y: 0, z: 0.12666667, w: 0}
+    pivot: {x: 0.064719334, y: 0.5166453}
+    oldSize: {x: 1.1283333, y: 0.99833333}
+    newSize: {x: 6.77, y: 5.99}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.17258877, y: 0.08965186}
+      - {x: 0.17261255, y: -0.09631047}
+      - {x: 0.91307014, y: -0.48594916}
+      - {x: 0.9119324, y: 0.4680818}
 --- !u!50 &2678954332958398464
 Rigidbody2D:
   serializedVersion: 4
@@ -139,35 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2607bdc2f2162ca48b9b9bf13c4321d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &5119557734896837175
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660379087125980184}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.07333334, y: 0, z: 0.12666667, w: 0}
-    pivot: {x: 0.064719334, y: 0.5166453}
-    oldSize: {x: 1.1283333, y: 0.99833333}
-    newSize: {x: 6.77, y: 5.99}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.17258877, y: 0.08965186}
-      - {x: 0.17261255, y: -0.09631047}
-      - {x: 0.91307014, y: -0.48594916}
-      - {x: 0.9119324, y: 0.4680818}
 --- !u!114 &-7534453560939522270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,3 +181,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _miniIceArrow: {fileID: 8495114357828643257, guid: a84ed462ce424f243899051230fddae0, type: 3}
+  _iceTrap: {fileID: 6985794561251366047, guid: 5429fc911b0405f439676e85941528f3, type: 3}
