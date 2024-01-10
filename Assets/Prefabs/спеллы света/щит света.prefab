@@ -165,3 +165,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lightRay: {fileID: 8291964458210500587, guid: 88119096e32ba9845aaaa5d4bcbc14ec, type: 3}
   _lightRing: {fileID: 7660379087125980184, guid: 161efee13def1194c9c90a0bff49f578, type: 3}
+  _lightPoint: {fileID: 7660379087125980184, guid: 919b09558dbfc2543af466b8b5f53872, type: 3}
+  IsAbleToInteract: 1

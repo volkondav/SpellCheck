@@ -3,26 +3,31 @@ using UnityEngine;
 public class ArrowSpell : DamagingSpell
 {
     // [SerializeField] private ScriptableArrowSpell _spellAttribute;
-    public float ArrowSpellSpeed;
+    public float SpellSpeed;
     private Rigidbody2D _spellBody;
+    private float _minimalSpeed = 0.5f;
     private float spellXPosition;
 
-    void Awake()
+    override protected void Awake()
     {
+        base.Awake();
+
         _spellBody = GetComponent<Rigidbody2D>();
         // _spellSpeed = _spellAttribute.spellSpeed;
         // damage = _spellAttribute.damage;
-        transform.Translate( 0, UnityEngine.Random.Range( -1f, 0 ), 0 );
+        // transform.Translate( 0, UnityEngine.Random.Range( -1f, 0 ), 0 );
     }
-    void Start()
+    override protected void Start()
     {   
+        base.Start();
+
         // spellBody.velocity = new Vector2(_spellSpeed,0);
         switch ( transform.eulerAngles.y ){
             case 0:
-                _spellBody.velocity = new Vector2(ArrowSpellSpeed, 0);
+                _spellBody.velocity = new Vector2(SpellSpeed, 0);
                 break;
             case 180:
-                _spellBody.velocity = new Vector2(ArrowSpellSpeed * -1, 0);
+                _spellBody.velocity = new Vector2(SpellSpeed * -1, 0);
                 break;
             default:
                 Debug.Log("This object \"" + transform.name + "\" has unpredicted euler angles: " + transform.eulerAngles.y, transform.gameObject );
@@ -30,11 +35,19 @@ public class ArrowSpell : DamagingSpell
         }
     }
 
-    void FixedUpdate()
+    override protected void FixedUpdate()
     {
+        base.FixedUpdate();
+
         // spellXPosition = transform.position.x;
         // print(spellXPosition);
+        CheckForMinimalSpeed();
         CheckForFinalPosition();
+    }
+
+    public void CheckForMinimalSpeed(){
+        if ( Mathf.Abs( GetComponent<Rigidbody2D>().velocity.x ) < _minimalSpeed )
+            InitiateDeath();
     }
 
     public void CheckForFinalPosition(){
@@ -70,7 +83,7 @@ public class ArrowSpell : DamagingSpell
 
     public void HalveSpeedAndDamage()
     {
-        ArrowSpellSpeed /= 2;
+        SpellSpeed /= 2;
         DirectDamage /= 2;
     }
 }

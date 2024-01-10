@@ -186,8 +186,10 @@ MonoBehaviour:
   spellCharacteristics: 0
   DirectDamage: 0
   DamageOT: 3
+  FutureDOT: 0
   DOTTimes: 5
-  ArrowSpellSpeed: 7
+  TargetFireColor: {r: 0.75, g: 0.5, b: 0.5, a: 1}
+  SpellSpeed: 5
 --- !u!114 &-5412981312358057734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,5 +214,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b69f30fb2dc5f48ace93cb1374e15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _darkSpellList: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}
-  _fireSpellList: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
+  _smallExplosion: {fileID: 2065986578781283409, guid: e9db181957ae7014392faa76351dff60, type: 3}
+  _fireLine: {fileID: 2065986578781283409, guid: 65424817e992bf44ebc4075fbc4d66d3, type: 3}

@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefabs:
   - {fileID: 8495114357828643257, guid: 81c49907302e914458ba043d133573d9, type: 3}
-  - {fileID: 7660379087125980184, guid: 1f7d01af26ca1b3469bfa407b6ab6a5b, type: 3}
-  - {fileID: 7660379087125980184, guid: 161efee13def1194c9c90a0bff49f578, type: 3}
   - {fileID: 7660379087125980184, guid: edf782a701aebb248b301555ea3bb333, type: 3}
   - {fileID: 6868580771691687402, guid: 915597c5a6900044b83691922ba17c94, type: 3}
   - {fileID: 6459559737068953375, guid: 69f2666883e97e045a2b426480e6610f, type: 3}

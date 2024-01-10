@@ -13,7 +13,9 @@ public class ElementalSpell : DamagingSpell
     private float spellXPosition;
 
     // Start is called before the first frame update
-    void Awake(){
+    override protected void Awake(){
+        base.Awake();
+
         spellBody = GetComponent<Rigidbody2D>();
 
         // Explosion = this.gameObject.transform.GetChild(0);
@@ -21,7 +23,7 @@ public class ElementalSpell : DamagingSpell
         // _spellSpeed = _spellAttribute.spellSpeed;
         // _explosionTime = _spellAttribute.explosionTime;
     }
-    void Start()
+    new void Start()
     {
         // spellBody.velocity = new Vector2(_spellSpeed,0);
         switch ( transform.eulerAngles.y ){
@@ -37,7 +39,7 @@ public class ElementalSpell : DamagingSpell
         }
     }
 
-    void FixedUpdate()
+    new void FixedUpdate()
     {
         // spellXPosition = transform.position.x;
         // print(spellXPosition);

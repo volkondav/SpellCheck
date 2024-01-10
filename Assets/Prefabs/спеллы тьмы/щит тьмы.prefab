@@ -163,5 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9757d66f7ccd484abd79448a0ac62a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arrowToSpawn: {fileID: 8495114357828643257, guid: 1a4fbfd5016c78d43b14f3d0fb47de11, type: 3}
-  isAbleToInteract: 1
+  _wispToSpawn: {fileID: 7660379087125980184, guid: 347dfca366a852641a35550995ccd752, type: 3}
+  _fireSpellList: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
+  IsAbleToInteract: 1
