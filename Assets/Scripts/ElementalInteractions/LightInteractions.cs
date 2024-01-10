@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class LightInteractions : ElementalInteractions
 {
-    [SerializeField] private GameObject _lightRay; // _ (нижнее подчёркивание) в именах переменных использовать для приватных переменных в определении класса; основная задача -- различать приватные переменные из класса и из функицй / методов
-    [SerializeField] private GameObject _lightRing;
-    [SerializeField] private GameObject _lightPoint;
+    // _ (нижнее подчёркивание) в именах переменных использовать для приватных переменных в определении класса; основная задача -- различать приватные переменные из класса и из функицй / методов
+    [SerializeField] private GameObject _lightRay, _lightRing, _lightPoint;
     // private Rigidbody2D _spellBody;
     // private SpriteRenderer _spellSprite;
     public bool IsAbleToInteract;
     // private float _speedIncrease = 1.5f;
 
-    void Awake(){
-        // _spellBody = GetComponent<Rigidbody2D>();
-        // _spellSprite = GetComponent<SpriteRenderer>();
-    }
+    // void Awake(){
+    //     _spellBody = GetComponent<Rigidbody2D>();
+    //     _spellSprite = GetComponent<SpriteRenderer>();
+    // }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
@@ -29,7 +29,7 @@ public class LightInteractions : ElementalInteractions
                 break;           
             case 8: // на время написания кода layer 8 -- это слой огонь
                 // InitiateSelfDestruction( collision.gameObject );
-                StartCoroutine( DelayedSelfDestruction( collision.gameObject ) );
+                StartCoroutine( _spellComponent.DelayedSelfDestruction( collision.gameObject ) );
                 LightWithFire( collision );
                 break;
             case 9: // на время напиания кода layer 9 -- этой слой свет
@@ -47,7 +47,7 @@ public class LightInteractions : ElementalInteractions
 
                 break;
             case 10: // на время напиания кода layer 9 -- этой слой тьма
-                InitiateSelfDestruction( collision.gameObject );
+                _spellComponent.InitiateSelfDestruction( collision.gameObject );
                 break;
 
             default:

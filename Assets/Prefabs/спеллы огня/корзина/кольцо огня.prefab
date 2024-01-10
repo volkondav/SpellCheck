@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3887871862823729231}
   - component: {fileID: 479027390431097951}
   - component: {fileID: 3695493812556555080}
-  - component: {fileID: -3761054380198621861}
   - component: {fileID: 4345217719756422047}
+  - component: {fileID: -8303504065708112470}
   m_Layer: 12
   m_Name: "\u043A\u043E\u043B\u044C\u0446\u043E \u043E\u0433\u043D\u044F"
   m_TagString: Untagged
@@ -139,24 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellCharacteristics: 0
-  DirectDamage: 0
-  DamageOT: 10
-  FutureDOT: 0
-  DOTTimes: 3
-  TargetFireColor: {r: 0, g: 0, b: 0, a: 0}
   _durationTime: 3
---- !u!114 &-3761054380198621861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065986578781283409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2607bdc2f2162ca48b9b9bf13c4321d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4345217719756422047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +152,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9af94c2279a294b94eff72fa420f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8303504065708112470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065986578781283409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8727c302e253e74ba774fdc3c10d091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DirectDamage: 0
+  DamageOT: 0
+  DOTTimes: 0
+  TargetFireColor: {r: 0, g: 0, b: 0, a: 0}
+  FutureDOT: 0

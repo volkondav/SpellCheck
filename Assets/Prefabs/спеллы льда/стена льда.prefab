@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellCharacteristics: 0
-  _durationTime: 20
+  _durationTime: 15
 --- !u!114 &-1851568813347835530
 MonoBehaviour:
   m_ObjectHideFlags: 0

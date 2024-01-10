@@ -29,7 +29,7 @@ public class HealthManager : MonoBehaviour
         _currentHealth += healing;
     }
 
-    public void UpdateDamageReduction( int[] newDamageReductionValues ){
+    public void UpdateDamageReductionValues( int[] newDamageReductionValues ){
         for (int i = 0; i < damageReduction.Length ; i++)
             damageReduction[i] = newDamageReductionValues[i];
     }

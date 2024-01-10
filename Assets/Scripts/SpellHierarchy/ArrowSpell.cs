@@ -1,27 +1,21 @@
+using System;
 using UnityEngine;
 
-public class ArrowSpell : DamagingSpell
+public class ArrowSpell : Spell
 {
-    // [SerializeField] private ScriptableArrowSpell _spellAttribute;
     public float SpellSpeed;
     private Rigidbody2D _spellBody;
-    private float _minimalSpeed = 0.5f;
-    private float spellXPosition;
+    private float MinimalSpeed { get; } = 0.5f;
 
-    override protected void Awake()
+    void Awake()
     {
-        base.Awake();
-
         _spellBody = GetComponent<Rigidbody2D>();
-        // _spellSpeed = _spellAttribute.spellSpeed;
-        // damage = _spellAttribute.damage;
         // transform.Translate( 0, UnityEngine.Random.Range( -1f, 0 ), 0 );
     }
-    override protected void Start()
-    {   
-        base.Start();
-
-        // spellBody.velocity = new Vector2(_spellSpeed,0);
+    virtual protected void Start()
+    {
+        // важное замечание: разворот объекта на 180 градусов вокруг оси y не изменяет направление его скорости
+        // таким образом, если нужно поменять направление движения объекта, то нужно менять и знак скорости
         switch ( transform.eulerAngles.y ){
             case 0:
                 _spellBody.velocity = new Vector2(SpellSpeed, 0);
@@ -35,55 +29,25 @@ public class ArrowSpell : DamagingSpell
         }
     }
 
-    override protected void FixedUpdate()
+    void FixedUpdate()
     {
-        base.FixedUpdate();
-
-        // spellXPosition = transform.position.x;
-        // print(spellXPosition);
         CheckForMinimalSpeed();
         CheckForFinalPosition();
     }
 
     public void CheckForMinimalSpeed(){
-        if ( Mathf.Abs( GetComponent<Rigidbody2D>().velocity.x ) < _minimalSpeed )
-            InitiateDeath();
+        if ( Mathf.Abs( GetComponent<Rigidbody2D>().velocity.x ) < MinimalSpeed )
+            InitiateSelfDestruction("minimal speed");
     }
 
     public void CheckForFinalPosition(){
-        switch ( transform.eulerAngles.y ){
-            case 0:
-                if ( transform.position.x > 11 )
-                    InitiateDeath();
-                break;
-            case 180:
-                if ( transform.position.x < -11 )
-                    InitiateDeath();
-                break;
-            default:
-                Debug.Log("This object \"" + transform.name + "\" has unpredicted euler angles: " + transform.eulerAngles.y, transform.gameObject );
-                break;
-        }
-        // if ( transform.position.x > 11 ){
-        //     Destroy(gameObject);
-        //     // print("Entered if");
-        // }
-
+        if ( Mathf.Abs( transform.position.x ) > 11 )
+            InitiateSelfDestruction("final position");
     }
 
-    // важно, чтобы скрипт ArrowSpell стоял после скриптов DamageDealer и ElementalInteractions
     void OnTriggerEnter2D(Collider2D collision){
         if ( collision.gameObject.layer == 6 )
-            InitiateDeath();
+            StartCoroutine ( DelayedSelfDestruction() );
     }
-
-    void InitiateDeath(){
-        Destroy(gameObject);
-    }
-
-    public void HalveSpeedAndDamage()
-    {
-        SpellSpeed /= 2;
-        DirectDamage /= 2;
-    }
+    
 }

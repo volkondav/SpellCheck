@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class IceTrap : MonoBehaviour
+public class IceTrap : Spell
 {
     [SerializeField] private int _trapDuration;
     private Vector3 _freezePosition;
@@ -47,7 +47,7 @@ public class IceTrap : MonoBehaviour
 
             yield return new WaitForSeconds( 1 );
         }
-        Destroy( this.gameObject );
+        InitiateSelfDestruction();
     }
 
     // void OnDestroy(){

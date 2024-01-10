@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-public class DamagingSpell : Spell
+public class DamagingSpellDeprecated : Spell
 {
     public int DirectDamage;
     public int DamageOT;

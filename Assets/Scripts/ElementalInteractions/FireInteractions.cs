@@ -7,18 +7,18 @@ public class FireInteractions : ElementalInteractions
 {
     // [SerializeField] private ScriptableSpellList _darkSpellList;
     // [SerializeField] private ScriptableSpellList _fireSpellList;
-    [SerializeField] private GameObject _smallExplosion;
-    [SerializeField] private GameObject _fireLine;
+    [SerializeField] private GameObject _smallExplosion, _fireLine;
     // private Rigidbody2D _spellBody;
     // private SpriteRenderer _spellSprite;
     // private DamagingSpell spellDamageComponent;
     // private float _speedDecrease = 0.6f;
     // private float _damageIncrease = 1.2f;
 
-    void Awake(){
-        // _spellBody = GetComponent<Rigidbody2D>();
-        // _spellSprite = GetComponent<SpriteRenderer>();
-    }
+    // void Awake(){
+    //     _spellBody = GetComponent<Rigidbody2D>();
+    //     _spellSprite = GetComponent<SpriteRenderer>();
+    // }
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
@@ -27,7 +27,7 @@ public class FireInteractions : ElementalInteractions
                 // DealDamage(collision);
                 break;   
             case 7: // на время написания кода layer 7 -- это слой лёд
-                InitiateSelfDestruction( collision.gameObject );
+                _spellComponent.InitiateSelfDestruction( collision.gameObject );
                 break;           
             case 8: // на время написания кода layer 8 -- это слой огонь
                 // InitiateDeath( collision.gameObject );
@@ -37,7 +37,7 @@ public class FireInteractions : ElementalInteractions
                 break;
             case 9: // на время напиания кода layer 9 -- этой слой свет
                 // Debug.Log("Entered case 9" , this.gameObject);
-                InitiateSelfDestruction( collision.gameObject );
+                _spellComponent.InitiateSelfDestruction( collision.gameObject );
                 break;
             case 10: // на время напиания кода layer 9 -- этой слой тьма
                 FireWithDark( collision.ClosestPoint( this.transform.position ) );

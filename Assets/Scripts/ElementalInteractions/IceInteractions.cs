@@ -5,13 +5,11 @@ using UnityEngine;
 public class IceInteractions : ElementalInteractions
 {
     // [SerializeField] private GameObject _miniIceArrow;
-    [SerializeField] private GameObject _iceTrap;
-    [SerializeField] private GameObject _iceCone;
+    [SerializeField] private GameObject _iceTrap, _iceCone;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        int otherLayer = collision.gameObject.layer;
-        switch (otherLayer)
+        switch ( collision.gameObject.layer )
         {
             case 6: // Characters
                 CreateIceTrap( collision );
@@ -20,10 +18,11 @@ public class IceInteractions : ElementalInteractions
             case 7: // лёд / ice
                 if ( this.gameObject.GetComponent<Rigidbody2D>().velocity.x != 0 )
                     IceWithIce( collision.ClosestPoint( this.transform.position ) );
-                InitiateSelfDestruction( collision.gameObject );
+                _spellComponent.InitiateSelfDestruction( collision.gameObject );
                 break;
             case 8: // огонь / fire
-                InitiateSelfDestruction( collision.gameObject );
+                // _spellComponent.InitiateSelfDestruction( collision.gameObject );
+                StartCoroutine( _spellComponent.DelayedSelfDestruction() );
                 break;
             case 9: // свет / light
                 // взаимодействие происходит на стороне света

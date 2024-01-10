@@ -28,7 +28,7 @@ public class DarkInteractions : ElementalInteractions
                 break;
             case 9: // на время напиания кода layer 9 -- этой слой свет
                 // Debug.Log("Entered case 9" , this.gameObject);
-                InitiateSelfDestruction( collision.gameObject );
+                _spellComponent.InitiateSelfDestruction( collision.gameObject );
                 break;
             case 10: // на время напиания кода layer 9 -- этой слой тьма
                 if ( IsAbleToInteract && collision.GetComponent<DarkInteractions>() != null ){
@@ -47,7 +47,8 @@ public class DarkInteractions : ElementalInteractions
 
     void DarkWithDark( Vector3 spawnPosition ){
 
-        GameObject spawnedArrow = Instantiate( _wispToSpawn, spawnPosition , new Quaternion() );
+        Instantiate( _wispToSpawn, spawnPosition , new Quaternion() );
+        // GameObject spawnedArrow = Instantiate( _wispToSpawn, spawnPosition , new Quaternion() );
         // код ниже срабатывает раньше, чем Awake() у объекта, который спавнится строкой выше
 
         // turn off interaction
@@ -55,13 +56,13 @@ public class DarkInteractions : ElementalInteractions
         // Destroy( spawnedArrow.GetComponent<DarkInteractions>() );
 
         // change direction
-        switch ( UnityEngine.Random.Range( 0, 2 ) ){
-            case 0:
-                break;
-            case 1:
-                spawnedArrow.transform.Rotate( Vector3.up, 180f );
-                break;
-        }
+        // switch ( UnityEngine.Random.Range( 0, 2 ) ){
+        //     case 0:
+        //         break;
+        //     case 1:
+        //         spawnedArrow.transform.Rotate( Vector3.up, 180f );
+        //         break;
+        // }
 
         // change scale
         // spawnedArrow.transform.localScale = new Vector3( 0.5f, 0.5f );
@@ -107,7 +108,7 @@ public class DarkInteractions : ElementalInteractions
                 }
                 // GameObject newSpell = Instantiate(spell, darkSpellToReplace.transform.position, darkSpellToReplace.transform.rotation);
                 // newSpell.layer = 8;
-                InitiateSelfDestruction( null );
+                _spellComponent.InitiateSelfDestruction();
                 break;
             }
         }

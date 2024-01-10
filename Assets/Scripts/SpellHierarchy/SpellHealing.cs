@@ -6,31 +6,16 @@ public class SpellHealing : Spell
 {
     [SerializeField] private int HealingValue;
 
-    // private HealthManager _healthManager;
-
-    // void OnTriggerEnter2D(Collider2D collision){
-    //     if ( collision.TryGetComponent<HealthManager>(out HealthManager healthManager) )
-    //         DealDamage(healthManager);
-    // }
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
         GetComponentInParent<HealthManager>().IncreaseHealth(HealingValue);
-        InitiateDeath();
+        InitiateSelfDestruction();
     }
 
-    public void InitiateDeath(){
+    override public void InitiateSelfDestruction(){
         transform.parent = null;
         // Debug.Break();
         Destroy(gameObject, GetComponent<GetAnimationClipLength>().GetClipInfo() );
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

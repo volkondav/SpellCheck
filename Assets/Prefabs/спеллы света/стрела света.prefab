@@ -184,9 +184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellCharacteristics: 0
-  DirectDamage: 5
-  DamageOT: 0
-  DOTTimes: 0
   SpellSpeed: 10
 --- !u!114 &-1313680996866124208
 MonoBehaviour:
@@ -200,6 +197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2607bdc2f2162ca48b9b9bf13c4321d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DirectDamage: 7
+  TargetDarkColor: {r: 0.94716984, g: 0.7202065, b: 0.94716984, a: 1}
+  FutureDirectDamage: 0
 --- !u!114 &-6044451545307733879
 MonoBehaviour:
   m_ObjectHideFlags: 0

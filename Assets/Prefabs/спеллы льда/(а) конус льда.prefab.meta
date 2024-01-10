@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 09dfcf1364db663479889281dfdb64fc
+guid: 60be90c509492f24fb54ab26e80b271f
 labels:
-- Fire
-- Shield
+- Aura
+- Ice
 PrefabImporter:
   externalObjects: {}
   userData: 

@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 4355074612230235123}
   - component: {fileID: 4321047343756443032}
   - component: {fileID: 2433885966733893864}
+  - component: {fileID: 5922399246232994516}
   m_Layer: 13
-  m_Name: "\u043B\u0443\u0447 \u0441\u0432\u0435\u0442\u0430"
+  m_Name: "(\u0430) \u043B\u0443\u0447 \u0441\u0432\u0435\u0442\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,10 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellCharacteristics: 0
-  DirectDamage: 5
-  DamageOT: 0
-  DOTTimes: 0
-  _durationTime: 1
+  _durationTime: 0.5
 --- !u!114 &2433885966733893864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,5 +160,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2607bdc2f2162ca48b9b9bf13c4321d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DirectDamage: 5
+  TargetDarkColor: {r: 0, g: 0, b: 0, a: 0}
+  FutureDirectDamage: 0
+--- !u!114 &5922399246232994516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8291964458210500587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf9af94c2279a294b94eff72fa420f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -1,5 +1,8 @@
 fileFormatVersion: 2
 guid: b0639e65ba3ded74795551704ad46339
+labels:
+- Ice
+- Shield
 PrefabImporter:
   externalObjects: {}
   userData: 

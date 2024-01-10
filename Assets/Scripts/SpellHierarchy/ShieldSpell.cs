@@ -16,13 +16,13 @@ public class ShieldSpell : Spell
     public IEnumerator DestroyCountdown(){
         for ( remainingShieldDuration = shieldDuration ; remainingShieldDuration > 0 ; remainingShieldDuration-- )
             yield return new WaitForSeconds(1);
-        Destroy(gameObject);
+        InitiateSelfDestruction();
     }
 
-    void Awake(){
-        // Debug.Log("Awake: " + this.gameObject.name, this.gameObject);
-        // buffManager = GetComponentInParent<BuffManager>();
-    }
+    // void Awake(){
+    //     Debug.Log("Awake: " + this.gameObject.name, this.gameObject);
+    //     buffManager = GetComponentInParent<BuffManager>();
+    // }
 
     void Start(){
         GetComponentInParent<BuffManager>().RememberBuff( this.gameObject, damageReductionValues );
@@ -35,10 +35,4 @@ public class ShieldSpell : Spell
     //     print("The buff is destroyed");
     //     GetComponentInParent<BuffManager>().ForgetBuff() ;
     // }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -13,13 +13,6 @@ public class BuffManager : MonoBehaviour
         healthManager = GetComponent<HealthManager>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if ( currentBuff == null )
@@ -33,13 +26,13 @@ public class BuffManager : MonoBehaviour
         // print("The buff is refreshed");
         // shieldSpell = buff.GetComponent<ShieldSpell>();
         // healthManager.UpdateDamageReduction( shieldSpell.RequestDamageReductionValues() );
-        healthManager.UpdateDamageReduction( damageReductionValues );
+        healthManager.UpdateDamageReductionValues( damageReductionValues );
     }
 
     public void ForgetBuff(){
         currentBuff = null;
         // shieldSpell = null;
-        healthManager.UpdateDamageReduction( emptyBuffValues );
+        healthManager.UpdateDamageReductionValues( emptyBuffValues );
     }
 
 }

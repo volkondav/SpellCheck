@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 02e13d77954b76e4cbf9820725f2633a
+labels:
+- Light
 PrefabImporter:
   externalObjects: {}
   userData: 
