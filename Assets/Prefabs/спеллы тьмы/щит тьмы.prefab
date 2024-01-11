@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5427206064877884948}
   - component: {fileID: 9150500838837891381}
   - component: {fileID: 3015070712899839172}
-  - component: {fileID: 2012281129192729275}
+  - component: {fileID: -35227693878574206}
   - component: {fileID: -4092806546229300022}
   m_Layer: 10
   m_Name: "\u0449\u0438\u0442 \u0442\u044C\u043C\u044B"
@@ -135,7 +135,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2012281129192729275
+--- !u!114 &-35227693878574206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,13 +144,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6868580771691687402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbb52fe03a554e43929590d5aa2efa7, type: 3}
+  m_Script: {fileID: 11500000, guid: c919f33c26d851945978e07e04abc3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spellCharacteristics: 1
   shieldDuration: 30
   remainingShieldDuration: 0
   damageReductionValues: 0000000000000000
+  _blinkInterval: 3
+  _blinkDuration: 3
 --- !u!114 &-4092806546229300022
 MonoBehaviour:
   m_ObjectHideFlags: 0

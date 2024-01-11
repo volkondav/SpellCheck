@@ -4,17 +4,26 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEngine.Assertions;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _healthText;
     [SerializeField] private int _currentHealth;
     [SerializeField] private int[] damageReduction = new int[2]; // первое значение -- это снижение прямого урона, второе -- периодического
     // private int[] dotArray = new int[12];
     // private List<int> dotList = new List<int>(); // заменить нижнюю версию на эту
     [SerializeField] private List<int> dotList = new List<int>();
+    private TextMeshProUGUI _healthText;
 
     private bool hasAnActiveDot = false;
+
+    void Awake(){
+        
+        // выглядит страшно, согласен, но пока не знаю лучшего способа получить референс на объект HealthPoints
+        // пока просто пусть HealthPoints будет первым объектом в объекте Canvas
+        Assert.IsTrue( this.transform.GetChild(0).GetChild(0).GetChild(0).TryGetComponent<TextMeshProUGUI>(out _healthText),
+                                "HealthPoints object was not found at the specified index of 0,0 in the hierarchy" );
+    }
 
     void Update()
     {

@@ -11,6 +11,7 @@ using System.Diagnostics;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject CurrentPlatform;
     [SerializeField] private TMP_InputField inputComponent;
     public int newSideCaretPosition = -1;
     public InputActionMap movementActionMap;
@@ -48,6 +49,11 @@ public class PlayerMovement : MonoBehaviour
             if ( transform.position.y > -2.5f )
                 transform.Translate(0,-2f,0);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision){
+        if ( collision.gameObject.layer ==  3)
+            CurrentPlatform = collision.gameObject;
     }
 
     // public void TestEvent(){

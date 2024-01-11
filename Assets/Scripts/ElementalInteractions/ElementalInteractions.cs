@@ -2,7 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ElementalInteractions : MonoBehaviour
+abstract public class ElementalInteractions : MonoBehaviour
 {
     protected Spell _spellComponent;
 
@@ -10,23 +10,39 @@ public class ElementalInteractions : MonoBehaviour
         _spellComponent = GetComponent<Spell>();
     }
 
-    // public void InitiateSelfDestruction( GameObject collisionGameObject ){
+    void OnTriggerEnter2D( Collider2D collision ){
+        // Debug.Log("Activated OnTriggerEnter2D: " + gameObject.name + " entered " + collision.name, gameObject);
+        switch ( collision.gameObject.layer ){
+            case 3: // на время написания кода layer 3 -- это Background, в том числе и Platforms
+                WithPlatform( collision );
+                break;
+            case 6: // на время написания кода layer 6 -- это слой Characters
+                WithCharacter( collision );
+                break;   
+            case 7: // на время написания кода layer 7 -- это слой лёд
+                WithIce( collision );
+                break;           
+            case 8: // на время написания кода layer 8 -- это слой огонь
+                WithFire( collision );
+                break;
+            case 9: // на время напиания кода layer 9 -- этой слой свет
+                WithLight( collision );
+                break;
+            case 10: // на время напиания кода layer 9 -- этой слой тьма
+                WithDark( collision );
+                break;
+            case 11: case 12: case 13: case 14: break; // все эти слои -- это ауры
+            default:
+                Debug.Log( "Could not retrieve a valid layer for: " + collision.name, collision.gameObject );
+                break;
+            }
+    }
 
-    //     // print("GameObject with name \"" + gameObject.name + "\" was destroyed when colliding with layer " + layer);
-    //     // Debug.Log( this.gameObject.name + " was destroyed when colliding with " + collisionGameObject.name, collisionGameObject );
-    //     // Debug.Log( this.gameObject.name + " was destroyed when colliding with " + collisionGameObject.name, this.gameObject );
-    //     Destroy( this.gameObject );
-    // }
-
-    // // этот метод нужно вызывать, если необходимо, чтобы сначала отработали все заходы в OnTriggerEnter, а затем уже объект уничожился
-    // public IEnumerator DelayedSelfDestruction( GameObject collisionGameObject ){
-        
-    //     // print("GameObject with name \"" + gameObject.name + "\" was destroyed when colliding with layer " + layer);
-    //     // Debug.Log( this.gameObject.name + " was destroyed when colliding with " + collisionGameObject.name, collisionGameObject );
-    //     // Debug.Log( this.gameObject.name + " was destroyed when colliding with " + collisionGameObject.name, this.gameObject );
-    //     yield return new WaitForFixedUpdate();
-    //     // print("DelayedSelfDestruction finished");
-    //     Destroy( this.gameObject );
-    // }
+    virtual protected void WithPlatform( Collider2D collision ){}
+    virtual protected void WithCharacter( Collider2D collision ){}
+    abstract protected void WithIce( Collider2D collision );
+    abstract protected void WithFire( Collider2D collision );
+    abstract protected void WithLight( Collider2D collision );
+    abstract protected void WithDark( Collider2D collision );
         
 }

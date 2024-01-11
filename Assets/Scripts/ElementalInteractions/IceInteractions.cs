@@ -7,42 +7,27 @@ public class IceInteractions : ElementalInteractions
     // [SerializeField] private GameObject _miniIceArrow;
     [SerializeField] private GameObject _iceTrap, _iceCone;
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        switch ( collision.gameObject.layer )
-        {
-            case 6: // Characters
-                CreateIceTrap( collision );
-                // InitiateSelfDestruction(collision.gameObject);
-                break;
-            case 7: // лёд / ice
-                if ( this.gameObject.GetComponent<Rigidbody2D>().velocity.x != 0 )
-                    IceWithIce( collision.ClosestPoint( this.transform.position ) );
-                _spellComponent.InitiateSelfDestruction( collision.gameObject );
-                break;
-            case 8: // огонь / fire
-                // _spellComponent.InitiateSelfDestruction( collision.gameObject );
-                StartCoroutine( _spellComponent.DelayedSelfDestruction() );
-                break;
-            case 9: // свет / light
-                // взаимодействие происходит на стороне света
-                break;
-            case 10: // тьма / dark
-                // взаимодействие отсутствует
-                break;
-            default:
-                //Debug.Log("Could not retrieve a valid layer for: " + collision.name, collision.gameObject);
-                break;
-        }
-    }
+    override protected void WithCharacter( Collider2D characterCollider ){
 
-    public void CreateIceTrap( Collider2D characterCollider ){
         Instantiate( _iceTrap, characterCollider.transform );
     }
 
-    public void IceWithIce( Vector3 spawnPosition ){
-        Instantiate( _iceCone, new Vector3( spawnPosition.x, this.transform.position.y), new Quaternion( 0, this.transform.rotation.eulerAngles.y , 0, 0) );
+    override protected void WithIce( Collider2D collision ){
+
+        if ( this.gameObject.GetComponent<Rigidbody2D>().velocity.x != 0 )
+            Instantiate( _iceCone, new Vector3( collision.ClosestPoint( this.transform.position ).x, this.transform.position.y), new Quaternion( 0, this.transform.rotation.eulerAngles.y , 0, 0) );
+        // код ниже срабатывает раньше, чем Awake() у объекта, который спавнится строкой выше
+        _spellComponent.InitiateSelfDestruction( collision.gameObject );
     }
+
+    override protected void WithFire( Collider2D collision ){
+
+        StartCoroutine( _spellComponent.DelayedSelfDestruction() );
+    }
+
+    override protected void WithLight( Collider2D collision ) { /* the interaction commences on the Light's object side */ }
+
+    override protected void WithDark( Collider2D collision ) { /* there is no interaction */ }
 
     // public void IceWithIce()
     // {

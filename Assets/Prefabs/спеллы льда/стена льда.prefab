@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d76fdda9faaffa48b31bd177dde7d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellCharacteristics: 0
+  spellCharacteristics: 1
   _durationTime: 15
 --- !u!114 &-1851568813347835530
 MonoBehaviour:
