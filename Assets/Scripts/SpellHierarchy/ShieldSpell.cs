@@ -24,7 +24,7 @@ public class ShieldSpell : Spell
     //     buffManager = GetComponentInParent<BuffManager>();
     // }
 
-    void Start(){
+    virtual protected void Start(){
         GetComponentInParent<BuffManager>().RememberBuff( this.gameObject, damageReductionValues );
         StartCoroutine( DestroyCountdown() );
         // buffManager.RememberBuff( this.gameObject , damageReductionValues );

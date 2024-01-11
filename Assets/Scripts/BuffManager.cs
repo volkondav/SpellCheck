@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuffManager : MonoBehaviour
 {
-    [SerializeField] private GameObject currentBuff;
+    [SerializeField] private GameObject _currentBuff;
     private int[] emptyBuffValues = { 0, 0 };
     private HealthManager healthManager;
     // private ShieldSpell shieldSpell;
@@ -15,14 +15,14 @@ public class BuffManager : MonoBehaviour
 
     void Update()
     {
-        if ( currentBuff == null )
+        if ( _currentBuff == null )
             ForgetBuff();
     }
 
     public void RememberBuff( GameObject buff, int[] damageReductionValues ){
-        if ( currentBuff )
-            Destroy(currentBuff);
-        currentBuff = buff;
+        if ( _currentBuff )
+            Destroy(_currentBuff);
+        _currentBuff = buff;
         // print("The buff is refreshed");
         // shieldSpell = buff.GetComponent<ShieldSpell>();
         // healthManager.UpdateDamageReduction( shieldSpell.RequestDamageReductionValues() );
@@ -30,7 +30,7 @@ public class BuffManager : MonoBehaviour
     }
 
     public void ForgetBuff(){
-        currentBuff = null;
+        _currentBuff = null;
         // shieldSpell = null;
         healthManager.UpdateDamageReductionValues( emptyBuffValues );
     }

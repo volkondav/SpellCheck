@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class Spell : MonoBehaviour
+abstract public class Spell : MonoBehaviour
 {
     // на данный момент существуют три типа характеристик для создания заклинания:
     // 1. (InFront) заклинание появляется перед персонажем
