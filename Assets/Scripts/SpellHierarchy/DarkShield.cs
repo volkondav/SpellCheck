@@ -14,8 +14,8 @@ public class DarkShield : ShieldSpell
         _spriteComponent = GetComponent<SpriteRenderer>();
         _characterSpriteComponent = transform.parent.GetComponent<SpriteRenderer>();
         
-        Assert.IsTrue( this.transform.parent.GetChild(0).GetChild(0).TryGetComponent<CanvasGroup>(out _canvasGroupComponent),
-                                "HealthPoints object was not found at the specified index of 0,0 in the hierarchy" );
+        _canvasGroupComponent = this.transform.parent.GetChild(0).GetChild(0).GetComponent<CanvasGroup>();
+        Assert.IsNotNull( _canvasGroupComponent, "HealthPoints object was not found at the specified index of 0,0 in the hierarchy" );
     }
 
     protected override void Start()

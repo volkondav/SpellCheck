@@ -21,8 +21,8 @@ public class HealthManager : MonoBehaviour
         
         // выглядит страшно, согласен, но пока не знаю лучшего способа получить референс на объект HealthPoints
         // пока просто пусть HealthPoints будет первым объектом в объекте Canvas
-        Assert.IsTrue( this.transform.GetChild(0).GetChild(0).GetChild(0).TryGetComponent<TextMeshProUGUI>(out _healthText),
-                                "HealthPoints object was not found at the specified index of 0,0 in the hierarchy" );
+        _healthText = this.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        Assert.IsNotNull( _healthText, "HealthPoints object was not found at the specified index of 0,0 in the hierarchy" );
     }
 
     void Update()

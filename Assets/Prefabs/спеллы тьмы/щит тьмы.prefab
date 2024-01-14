@@ -153,6 +153,7 @@ MonoBehaviour:
   damageReductionValues: 0000000000000000
   _blinkInterval: 3
   _blinkDuration: 3
+  _canvasGroupComponent: {fileID: 0}
 --- !u!114 &-4092806546229300022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,5 +167,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wispToSpawn: {fileID: 7660379087125980184, guid: 347dfca366a852641a35550995ccd752, type: 3}
-  _fireSpellList: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
+  _zoneToSpawn: {fileID: 2401672251452075479, guid: 837cb6bf144cee64b95c0ccdeec87628, type: 3}
   IsAbleToInteract: 1

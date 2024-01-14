@@ -8,11 +8,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using TMPro;
 using System.Diagnostics;
+using UnityEngine.Assertions;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : CharacterBasics
 {
-    public GameObject CurrentPlatform;
-    [SerializeField] private TMP_InputField inputComponent;
+    private TMP_InputField _inputComponent;
+    // [SerializeField] private TMP_InputField _inputComponent;
     public int newSideCaretPosition = -1;
     public InputActionMap movementActionMap;
     
@@ -21,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
     
     void Awake(){
         movementActionMap = GetComponent<PlayerInput>().currentActionMap;
+
+        _inputComponent = GetComponentInChildren<TMP_InputField>();
+        Assert.IsNotNull( _inputComponent, "Component reference for TMP_InputField from InputField is missing, check hierarchy structure");
+
     }
 
     // необходимо работать с ActionMaps через объект, на котором добавлен компонент PlayerInput
@@ -36,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     public void Up(InputAction.CallbackContext context){
         // print(inputComponent.caretPosition + "" + context);
         if ( context.performed ){
-            newSideCaretPosition = inputComponent.caretPosition;
+            newSideCaretPosition = _inputComponent.caretPosition;
             if ( transform.position.y < 1.5f )
                 transform.Translate(0,2f,0);
         }
@@ -45,15 +50,10 @@ public class PlayerMovement : MonoBehaviour
     public void Down(InputAction.CallbackContext context){
         // print(inputComponent.caretPosition + "" + context);
         if ( context.performed ){
-            newSideCaretPosition = inputComponent.caretPosition;
+            newSideCaretPosition = _inputComponent.caretPosition;
             if ( transform.position.y > -2.5f )
                 transform.Translate(0,-2f,0);
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision){
-        if ( collision.gameObject.layer ==  3)
-            CurrentPlatform = collision.gameObject;
     }
 
     // public void TestEvent(){
