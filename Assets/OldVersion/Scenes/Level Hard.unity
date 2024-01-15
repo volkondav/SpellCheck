@@ -4722,7 +4722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentPlatform: {fileID: 0}
-  IsAbleToMove: 0
+  IsAbleToMove: 1
   TimeForOneLetter: 0.4
 --- !u!114 &8750921824313583369
 MonoBehaviour:
@@ -4737,8 +4737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpellBook:
-  - {fileID: 11400000, guid: 99b991eb1a5b5104081b15ebf54321f6, type: 2}
   - {fileID: 11400000, guid: 93bceadc79d0acd43ba38b1dc79a8c22, type: 2}
+  - {fileID: 11400000, guid: 99b991eb1a5b5104081b15ebf54321f6, type: 2}
 --- !u!114 &8750921824313583370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4805,14 +4805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentPlatform: {fileID: 0}
-  inputComponent: {fileID: 372127700}
-  newSideCaretPosition: -1
-  movementActionMap:
-    m_Name: Movement
-    m_Id: 6a838f98-904f-43a9-9c96-261e612a0e4d
-    m_Asset: {fileID: 0}
-    m_Actions: []
-    m_Bindings: []
+  IsAbleToMove: 1
 --- !u!114 &9047166618331342063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4923,8 +4916,6 @@ MonoBehaviour:
   spellListFire: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
   spellListLight: {fileID: 11400000, guid: 91497fa7142fd6841940b6ed498e5316, type: 2}
   spellListDark: {fileID: 11400000, guid: 86757f11f77a21e4e91bb3577f0ff658, type: 2}
-  inputComponent: {fileID: 372127700}
-  image: {fileID: 372127701}
 --- !u!114 &9047166618331342068
 MonoBehaviour:
   m_ObjectHideFlags: 0

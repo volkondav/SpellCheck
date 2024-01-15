@@ -2002,17 +2002,17 @@ namespace TMPro
                         return EditState.Continue;
                     }
 
-                case KeyCode.UpArrow:
-                    {
-                        MoveUp(shift);
-                        return EditState.Continue;
-                    }
+                // case KeyCode.UpArrow:
+                //     {
+                //         MoveUp(shift);
+                //         return EditState.Continue;
+                //     }
 
-                case KeyCode.DownArrow:
-                    {
-                        MoveDown(shift);
-                        return EditState.Continue;
-                    }
+                // case KeyCode.DownArrow:
+                //     {
+                //         MoveDown(shift);
+                //         return EditState.Continue;
+                //     }
 
                 case KeyCode.PageUp:
                     {

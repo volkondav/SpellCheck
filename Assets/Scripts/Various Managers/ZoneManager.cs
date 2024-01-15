@@ -14,6 +14,7 @@ public class ZoneManager : MonoBehaviour
     }
 
     public void SpawnDarkExplosion( GameObject explosion ){
-        Instantiate( explosion, _currentZone.transform );
+        if ( _currentZone != null )
+            Instantiate( explosion, _currentZone.transform );
     }
 }

@@ -7,7 +7,6 @@ public class SimpleRandomEnemyBehaviour : CharacterBasics
     private ScriptableSpellList enemySpellList;
     private SpellCaster enemySpellCaster;
     private GameObject currentSpellToCast;
-    public bool IsAbleToMove;
     public float TimeForOneLetter;
 
     void Awake()
@@ -49,6 +48,7 @@ public class SimpleRandomEnemyBehaviour : CharacterBasics
         // StartCoroutine( EnemyStartedCasting( currentSpellToCast.name.Length ) );
         yield return new WaitForSeconds( currentSpellToCast.name.Length * TimeForOneLetter );
         enemySpellCaster.CastASpell( currentSpellToCast, -1 );
+        yield return new WaitForSeconds( 0.3f );
         StartCoroutine( StartCasting() );
         // print("Couroutine terminated");
     }

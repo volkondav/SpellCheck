@@ -50,7 +50,7 @@ public class SpellRenderer : MonoBehaviour
     void Update()
     {
         _inputComponent.ActivateInputField();
-        UpdateCaretPosition();
+        // UpdateCaretPosition();
         // print(inputComponent.caretPosition);
         if ( _currentString == "" )
             // inputTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0); создаёт неприятные ошибки в расчёте всех окон
@@ -62,17 +62,17 @@ public class SpellRenderer : MonoBehaviour
         // вот что я понял:
         // 1. (inputComponent.text = s) снова вызывает ивент TextChanged, но при этом не передаёт новую позицию каретки
         // 2. ивент TextChanged обновляет позицию каретки сркытно в самом конце
-    public void UpdateCaretPosition(){
-        if ( _playerMovement.newSideCaretPosition != -1 ){
-             _inputComponent.caretPosition = _playerMovement.newSideCaretPosition;
-            _playerMovement.newSideCaretPosition = -1;
-        }
-        // print("Updating caret position: " + inputComponent.caretPosition + "" + timesTextChanged);
-        // if ( timesTextChanged > 0 ){
-        //     inputComponent.caretPosition--;
-        //     timesTextChanged--;
-        // }
-    }
+    // public void UpdateCaretPosition(){
+    //     if ( _playerMovement.newSideCaretPosition != -1 ){
+    //          _inputComponent.caretPosition = _playerMovement.newSideCaretPosition;
+    //         _playerMovement.newSideCaretPosition = -1;
+    //     }
+    //     // print("Updating caret position: " + inputComponent.caretPosition + "" + timesTextChanged);
+    //     // if ( timesTextChanged > 0 ){
+    //     //     inputComponent.caretPosition--;
+    //     //     timesTextChanged--;
+    //     // }
+    // }
     public void TextChanged(string s){
         // if (timesTextChanged == -1 )
         //     myCaretPosition = inputComponent.caretPosition;
