@@ -41,18 +41,24 @@ public class PlayerMovement : CharacterBasics
     public void Up(InputAction.CallbackContext context){
         // print(inputComponent.caretPosition + "" + context);
         if ( context.performed ){
-            // newSideCaretPosition = _inputComponent.caretPosition;
-            if ( IsAbleToMove && transform.position.y < 1.5f )
-                transform.Translate(0,2f,0);
+            if (isLocalPlayer)
+            {
+                // newSideCaretPosition = _inputComponent.caretPosition;
+                if ( IsAbleToMove && transform.position.y < 1.5f )
+                    transform.Translate(0,2f,0);
+            }
         }
     }
 
     public void Down(InputAction.CallbackContext context){
         // print(inputComponent.caretPosition + "" + context);
         if ( context.performed ){
-            // newSideCaretPosition = _inputComponent.caretPosition;
-            if ( IsAbleToMove && transform.position.y > -2.5f )
+            if (isLocalPlayer)
+            {
+                // newSideCaretPosition = _inputComponent.caretPosition;
+                if ( IsAbleToMove && transform.position.y > -2.5f )
                 transform.Translate(0,-2f,0);
+            }
         }
     }
 
