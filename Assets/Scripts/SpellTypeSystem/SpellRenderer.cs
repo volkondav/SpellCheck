@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -13,12 +14,16 @@ using UnityEngine.UIElements;
 public class SpellRenderer : MonoBehaviour
 {
     [SerializeField] private string _currentString;
-    [SerializeField] private RectTransform _inputTransform;
-    [SerializeField] private TMP_InputField _inputComponent;
-    [SerializeField] private CanvasGroup _canvasgroupComponent;
-    [SerializeField] private PlayerSpellEvents _playerSpellEvents;
-
+    private RectTransform _inputTransform;
+    private TMP_InputField _inputComponent;
+    private CanvasGroup _canvasgroupComponent;
     private PlayerMovement _playerMovement;
+
+    // [SerializeField] private RectTransform _inputTransform;
+    // [SerializeField] private TMP_InputField _inputComponent;
+    // [SerializeField] private CanvasGroup _canvasgroupComponent;
+    // [SerializeField] private PlayerSpellEvents _playerSpellEvents;
+
     // private int timesTextChanged = -1;
     // private int myCaretPosition = 0;
 
@@ -29,13 +34,23 @@ public class SpellRenderer : MonoBehaviour
     {
         // inputTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
         _playerMovement = GetComponent<PlayerMovement>();
+
+        _inputTransform = this.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>();
+        Assert.IsNotNull( _inputTransform, "Component reference for RectTransform from InputField is missing, check hierarchy structure");
+
+        _inputComponent = GetComponentInChildren<TMP_InputField>();
+        Assert.IsNotNull( _inputComponent, "Component reference for TMP_InputField from InputField is missing, check hierarchy structure");
+
+        _canvasgroupComponent = this.transform.GetChild(0).GetChild(1).GetComponent<CanvasGroup>();
+        Assert.IsNotNull( _canvasgroupComponent, "Component reference for CanvasGroup from InputField is missing, check hierarchy structure");
+
     }
 
     // Update is called once per frame
     void Update()
     {
         _inputComponent.ActivateInputField();
-        UpdateCaretPosition();
+        // UpdateCaretPosition();
         // print(inputComponent.caretPosition);
         if ( _currentString == "" )
             // inputTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0); создаёт неприятные ошибки в расчёте всех окон
@@ -47,17 +62,17 @@ public class SpellRenderer : MonoBehaviour
         // вот что я понял:
         // 1. (inputComponent.text = s) снова вызывает ивент TextChanged, но при этом не передаёт новую позицию каретки
         // 2. ивент TextChanged обновляет позицию каретки сркытно в самом конце
-    public void UpdateCaretPosition(){
-        if ( _playerMovement.newSideCaretPosition != -1 ){
-             _inputComponent.caretPosition = _playerMovement.newSideCaretPosition;
-            _playerMovement.newSideCaretPosition = -1;
-        }
-        // print("Updating caret position: " + inputComponent.caretPosition + "" + timesTextChanged);
-        // if ( timesTextChanged > 0 ){
-        //     inputComponent.caretPosition--;
-        //     timesTextChanged--;
-        // }
-    }
+    // public void UpdateCaretPosition(){
+    //     if ( _playerMovement.newSideCaretPosition != -1 ){
+    //          _inputComponent.caretPosition = _playerMovement.newSideCaretPosition;
+    //         _playerMovement.newSideCaretPosition = -1;
+    //     }
+    //     // print("Updating caret position: " + inputComponent.caretPosition + "" + timesTextChanged);
+    //     // if ( timesTextChanged > 0 ){
+    //     //     inputComponent.caretPosition--;
+    //     //     timesTextChanged--;
+    //     // }
+    // }
     public void TextChanged(string s){
         // if (timesTextChanged == -1 )
         //     myCaretPosition = inputComponent.caretPosition;
@@ -105,7 +120,8 @@ public class SpellRenderer : MonoBehaviour
         // print("From SubmitSpell: " + s);
         // inputComponent.text = ""; очистка текста происходит в SpellCaster.cs при успешном соотвествии заклинания
         // playerSpellEvents.Invoke("PlayerCastsASpell", 0);
-        _playerSpellEvents.PlayerCastsASpell.Invoke(s);
+        // _playerSpellEvents.PlayerCastsASpell.Invoke(s);
+        PlayerSpellEvents.PlayerSpellEventsReference.PlayerCastsASpell.Invoke(s);
     }
 
 

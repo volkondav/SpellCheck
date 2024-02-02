@@ -6,16 +6,20 @@ public class WallSpell : Spell
 {
     [SerializeField] private float _durationTime;
 
-    void Awake()
-    {
-        this.transform.parent.GetComponent<PlayerMovement>().CurrentPlatform.GetComponent<WallManager>().RememberWall( this.gameObject );
-    }
-
     void Start()
     {
-        StartCoroutine( WallActive() );
+        this.transform.parent.GetComponent<CharacterBasics>().CurrentPlatform.GetComponent<WallManager>().RememberWall( this.gameObject );
         this.transform.parent = null;
+        StartCoroutine( WallActive() );
     }
+
+    // void OnTriggerEnter2D( Collider2D collision )
+    // {
+    //     if ( collision.gameObject.layer == 3 )
+    //     {
+    //         collision.gameObject.GetComponent<WallManager>().RememberWall( this.gameObject );
+    //     }
+    // }
 
     IEnumerator WallActive()
     {

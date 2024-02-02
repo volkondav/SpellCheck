@@ -37,12 +37,14 @@ public class ArrowSpell : Spell
 
     public void CheckForMinimalSpeed(){
         if ( Mathf.Abs( GetComponent<Rigidbody2D>().velocity.x ) < MinimalSpeed )
-            InitiateSelfDestruction("minimal speed");
+            InitiateSelfDestruction();
+            // InitiateSelfDestruction("minimal speed");
     }
 
     public void CheckForFinalPosition(){
         if ( Mathf.Abs( transform.position.x ) > 11 )
-            InitiateSelfDestruction("final position");
+            InitiateSelfDestruction();
+            // InitiateSelfDestruction("final position");
     }
 
     void OnTriggerEnter2D(Collider2D collision){

@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleRandomEnemyBehaviour : MonoBehaviour
+public class SimpleRandomEnemyBehaviour : CharacterBasics
 {
     private ScriptableSpellList enemySpellList;
     private SpellCaster enemySpellCaster;
     private GameObject currentSpellToCast;
-    public bool IsAbleToMove;
     public float TimeForOneLetter;
 
-    void Awake(){
+    void Awake()
+    {
         enemySpellList = GetComponent<EnemySpellBook>().enemySpellBook[0];
         enemySpellCaster = GetComponent<SpellCaster>();
     }
@@ -22,7 +22,8 @@ public class SimpleRandomEnemyBehaviour : MonoBehaviour
         StartCoroutine( StartCasting() );
     }
 
-    IEnumerator StartCasting(){
+    IEnumerator StartCasting()
+    {
         if ( IsAbleToMove ){
             switch ( transform.position.y ){
                 case 1.5f:
@@ -47,18 +48,15 @@ public class SimpleRandomEnemyBehaviour : MonoBehaviour
         // StartCoroutine( EnemyStartedCasting( currentSpellToCast.name.Length ) );
         yield return new WaitForSeconds( currentSpellToCast.name.Length * TimeForOneLetter );
         enemySpellCaster.CastASpell( currentSpellToCast, -1 );
+        yield return new WaitForSeconds( 0.3f );
         StartCoroutine( StartCasting() );
         // print("Couroutine terminated");
     }
 
-    IEnumerator EnemyStartedCasting( int castDuration ){
+    IEnumerator EnemyStartedCasting( int castDuration )
+    {
 
         yield return new WaitForSeconds(castDuration);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

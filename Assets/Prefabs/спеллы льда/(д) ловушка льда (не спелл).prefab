@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3506086213292940844}
   - component: {fileID: 5442359666284562955}
-  - component: {fileID: 2612371010028774112}
+  - component: {fileID: 4147900212518349959}
   - component: {fileID: -8055368390158493947}
   - component: {fileID: 7374705915884829327}
   - component: {fileID: 6904425240711719313}
@@ -89,8 +89,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &2612371010028774112
-EdgeCollider2D:
+--- !u!60 &4147900212518349959
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,16 +103,25 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2742857, y: 0.7228571}
+    newSize: {x: 4.46, y: 2.53}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -0.6790001, y: 0.37670982}
-  - {x: -0.6793551, y: -0.52326953}
-  - {x: 0.69844913, y: -0.5258069}
-  - {x: 0.69693774, y: 0.39464825}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - - {x: -0.6801023, y: 0.40169325}
+      - {x: -0.73616445, y: 0.40336302}
+      - {x: -0.74603, y: -0.5523888}
+      - {x: 0.75799173, y: -0.5577507}
+      - {x: 0.74673927, y: 0.45261616}
+      - {x: 0.7136409, y: 0.453298}
+      - {x: 0.70192945, y: -0.5325186}
+      - {x: -0.70042247, y: -0.5289797}
 --- !u!50 &-8055368390158493947
 Rigidbody2D:
   serializedVersion: 4
@@ -146,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc5031d5c21bbd4d84503c8863d3d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellCharacteristics: 0
   _trapDuration: 10
 --- !u!114 &6904425240711719313
 MonoBehaviour:
