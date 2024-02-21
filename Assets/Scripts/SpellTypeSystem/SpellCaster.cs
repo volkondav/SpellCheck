@@ -20,9 +20,6 @@ public class SpellCaster : MonoBehaviour
             // case Spell.SpellCharacteristics.AtCharacter:
             //     Instantiate(spell, new Vector3( gameObject.transform.position.x, gameObject.transform.position.y - 0.4f ), new Quaternion());
             //     break;
-            case Spell.SpellCharacteristics.AsEvent:
-                PlayerSpellEvents.PlayerSpellEventsReference.ActivateDarkExplosion.Invoke( spellToCast );
-                break;
             default:
                 print("Could not retrieve valid SpellCharacteristics of: " + spellToCast.name );
                 break;

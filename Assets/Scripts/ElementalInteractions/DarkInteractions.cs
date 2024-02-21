@@ -7,17 +7,9 @@ using UnityEngine;
 
 public class DarkInteractions : ElementalInteractions
 {
-    [SerializeField] private GameObject _wispToSpawn, _zoneToSpawn;
-    // [SerializeField] private PlayerSpellEvents _playerSpellEvents;
-    // [SerializeField] private ScriptableSpellList _fireSpellList;
+    [SerializeField] private GameObject _wispToSpawn;
+    [SerializeField] private ScriptableSpellList _fireSpellList;
     public bool IsAbleToInteract = true;
-
-    protected override void WithPlatform(Collider2D collision)
-    {
-        // Instantiate( _zoneToSpawn, collision.transform );
-        // _playerSpellEvents.ZoneSpawned.Invoke( Instantiate( _zoneToSpawn, collision.transform ) );
-        PlayerSpellEvents.PlayerSpellEventsReference.ZoneSpawned.Invoke( Instantiate( _zoneToSpawn, collision.transform ) );
-    }
 
     override protected void WithIce( Collider2D collision ) { /* there is no interaction */ }
 
@@ -54,8 +46,8 @@ public class DarkInteractions : ElementalInteractions
         // }
     }
 
-    override protected void WithLight( Collider2D collision )
-    {
+    override protected void WithLight( Collider2D collision ){
+
         _spellComponent.InitiateSelfDestruction( collision.gameObject );
     }
 

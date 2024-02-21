@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Assertions;
 
 public class SpellChecker : MonoBehaviour
 {
@@ -11,21 +10,19 @@ public class SpellChecker : MonoBehaviour
     [SerializeField] private ScriptableSpellList spellListFire;
     [SerializeField] private ScriptableSpellList spellListLight;
     [SerializeField] private ScriptableSpellList spellListDark;
-    private TMP_InputField _inputComponent;
-    // [SerializeField] private TMP_InputField _inputComponent;
-    private Image _image;
-    // [SerializeField] private Image _image;
+    [SerializeField] private TMP_InputField inputComponent;
+    [SerializeField] private Image image;
     private SpellCaster spellCaster;
     
     private void Awake()
     {
         spellCaster = GetComponent<SpellCaster>();
+    }
 
-        _inputComponent = GetComponentInChildren<TMP_InputField>();
-        Assert.IsNotNull( _inputComponent, "Component reference for TMP_InputField from InputField is missing, check hierarchy structure");
-
-        _image = this.transform.GetChild(0).GetChild(1).GetComponent<Image>();
-        Assert.IsNotNull( _image, "Component reference for Image from InputField is missing, check hierarchy structure");
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     public void CheckSpellName(string spellName){
@@ -67,7 +64,7 @@ public class SpellChecker : MonoBehaviour
                 } */
 
                 spellCaster.CastASpell( spell, 1 );
-                _inputComponent.text = "";
+                inputComponent.text = "";
                 return true;
                 // Instantiate(spell, new Vector3( gameObject.transform.position.x + spellValues.SpawnPosition.x, gameObject.transform.position.y + spellValues.SpawnPosition.y), new Quaternion());
             }
@@ -85,8 +82,8 @@ public class SpellChecker : MonoBehaviour
 
             // image.color = Color.HSVToRGB( 0, 1, 1);
             // print("Image Colour: " + image.color);
-            _image.canvasRenderer.SetColor( Color.HSVToRGB( 0, 1, 1) );
-            _image.CrossFadeColor( Color.HSVToRGB(0, 0, 1), 0.35f, false, false); // поставил ignoreTimeScale = false, так как было бы полезно во время паузы останавливать анимацию подсветки
+            image.canvasRenderer.SetColor( Color.HSVToRGB( 0, 1, 1) );
+            image.CrossFadeColor( Color.HSVToRGB(0, 0, 1), 0.35f, false, false); // поставил ignoreTimeScale = false, так как было бы полезно во время паузы останавливать анимацию подсветки
     }
 
     // public IEnumerator HighlightMisspell(){

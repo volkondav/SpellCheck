@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerSpellEvents : MonoBehaviour
 {
-    static public PlayerSpellEvents PlayerSpellEventsReference;
+    // Start is called before the first frame update
     public UnityEvent<string> PlayerCastsASpell;
-    public UnityEvent<GameObject> ZoneSpawned, ActivateDarkExplosion;
     public UnityEvent DummyEvent;
-    
-    void Awake()
+    void Start()
     {
-        PlayerSpellEventsReference = this.gameObject.GetComponent<PlayerSpellEvents>();
+        
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

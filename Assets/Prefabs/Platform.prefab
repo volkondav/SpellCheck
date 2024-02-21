@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3361498940672496563}
   - component: {fileID: 2194263845617144298}
-  - component: {fileID: 5678110369379328607}
+  - component: {fileID: 6668859982614682933}
   - component: {fileID: 9969427814937585}
   - component: {fileID: 3299442312565816390}
   m_Layer: 3
@@ -341,8 +341,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!70 &5678110369379328607
-CapsuleCollider2D:
+--- !u!61 &6668859982614682933
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -354,9 +354,19 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.1249999}
-  m_Size: {x: 2.9375, y: 2.2500002}
-  m_Direction: 1
+  m_Offset: {x: 0.017012775, y: 1.1403112}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2.9375, y: 2.25}
+    newSize: {x: 0.8125, y: 1.625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.84837615, y: 0.65423536}
+  m_EdgeRadius: 0
 --- !u!114 &9969427814937585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5bf45258e1a8fb4f8b1a593fa4a017e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWall: {fileID: 0}
 --- !u!1 &6976709227900233561
 GameObject:
   m_ObjectHideFlags: 0

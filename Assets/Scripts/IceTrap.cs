@@ -7,9 +7,8 @@ using UnityEngine.InputSystem;
 public class IceTrap : Spell
 {
     [SerializeField] private int _trapDuration;
-    private CharacterBasics _frozenCharacter;
-    // private Vector3 _freezePosition;
-    // private Transform _frozenCharacter;
+    private Vector3 _freezePosition;
+    private Transform _frozenCharacter;
     
     // пока такой вариант работает только для игрока, но не для нпс
     // void Start(){
@@ -27,26 +26,17 @@ public class IceTrap : Spell
         // _frozenCharacter = GetComponentInParent<Transform>();
 
         // аналогично есть this.transform.root, но он возвращает самого дальнего возможного родителя, а не ближайшего
-        // _frozenCharacter = this.transform.parent.GetComponent<Transform>();
-        // _freezePosition = _frozenCharacter.position;
-
-        _frozenCharacter = this.transform.parent.GetComponent<CharacterBasics>();
-
+        _frozenCharacter = this.transform.parent.GetComponent<Transform>();
+        _freezePosition = _frozenCharacter.position;
     }
 
     void Start(){
         StartCoroutine( IceTrapActive( _trapDuration ) );
-        _frozenCharacter.IsAbleToMove = false;
     }
 
-    void OnDestroy()
-    {
-        _frozenCharacter.IsAbleToMove = true;
+    void Update(){
+        _frozenCharacter.position = _freezePosition;
     }
-
-    // void Update(){
-    //     _frozenCharacter.position = _freezePosition;
-    // }
 
     IEnumerator IceTrapActive( int duration ){
         while( duration > 0 ){

@@ -6,22 +6,20 @@ public class WallManager : MonoBehaviour
 {
     [SerializeField] private GameObject _currentWall;
     
-    public void RememberWall( GameObject wall )
+    void Update()
     {
+        if ( _currentWall == null )
+            ForgetWall();
+    }
+
+    public void RememberWall( GameObject wall ){
         if ( _currentWall )
             Destroy(_currentWall);
         _currentWall = wall;
     }
 
-    // void Update()
-    // {
-    //     if ( _currentWall == null )
-    //         ForgetWall();
-    // }
-
-    // public void ForgetWall()
-    // {
-    //     _currentWall = null;
-    // }
+    public void ForgetWall(){
+        _currentWall = null;
+    }
 
 }

@@ -10,7 +10,7 @@ public class LightInteractions : ElementalInteractions
 
     override protected void WithIce( Collider2D collision ){
 
-        Instantiate( _lightRay, new Vector3( 0, collision.ClosestPoint( this.transform.position ).y ) , new Quaternion() );
+        Instantiate( _lightRay, collision.ClosestPoint( this.transform.position ) , new Quaternion() );
     }
 
     override protected void WithFire( Collider2D collision ){
@@ -24,7 +24,7 @@ public class LightInteractions : ElementalInteractions
         if ( IsAbleToInteract && collision.GetComponent<LightInteractions>() != null ){
             collision.GetComponent<LightInteractions>().IsAbleToInteract = false;
             // отправляю здесь в функцию позицию точки на периметре коллайдера, которая является ближайшей между коллайдером одного объекта и центром другого
-            Instantiate( _lightPoint, collision.ClosestPoint( this.transform.position ) , new Quaternion() );
+            Instantiate( _lightPoint, new Vector3( 0, collision.ClosestPoint( this.transform.position ).y ) , new Quaternion() );
             }
         else
             IsAbleToInteract = true;

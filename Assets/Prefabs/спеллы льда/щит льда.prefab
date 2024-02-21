@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellCharacteristics: 1
-  shieldDuration: 10
+  shieldDuration: 30
   remainingShieldDuration: 0
   damageReductionValues: 0f00000000000000
 --- !u!114 &6220966818425688042
