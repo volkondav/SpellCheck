@@ -171,7 +171,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2394702166226905191}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -378,6 +378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57cb1a51ec4cb474091ddece460610f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   spellListIce: {fileID: 11400000, guid: 93bceadc79d0acd43ba38b1dc79a8c22, type: 2}
   spellListFire: {fileID: 11400000, guid: d59d6dde363a27d42a5b8ee0332b93af, type: 2}
   spellListLight: {fileID: 11400000, guid: 91497fa7142fd6841940b6ed498e5316, type: 2}
@@ -439,6 +442,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f432a1beb74fcf24e9a3deb2dccbbef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   _currentString: 
 --- !u!114 &6438997744960884330
 MonoBehaviour:
@@ -452,6 +458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae6b2a0ce9234b4195e57a24e53f38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
 --- !u!114 &3836724499122175094
 MonoBehaviour:
   m_ObjectHideFlags: 0

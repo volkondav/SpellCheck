@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
+using Mirror;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.UI;
@@ -11,7 +12,7 @@ using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class SpellRenderer : MonoBehaviour
+public class SpellRenderer : NetworkBehaviour
 {
     [SerializeField] private string _currentString;
     private RectTransform _inputTransform;
@@ -46,10 +47,18 @@ public class SpellRenderer : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        //print("ОБЪЕКТ \n" + this.name + "\n ЗАПУСТИЛСЯ");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        _inputComponent.ActivateInputField();
+        if (isLocalPlayer)
+        {
+            _inputComponent.ActivateInputField();
+        }
         // UpdateCaretPosition();
         // print(inputComponent.caretPosition);
         if ( _currentString == "" )
@@ -80,7 +89,6 @@ public class SpellRenderer : MonoBehaviour
         // timesTextChanged++;
         // s = s.TrimStart();
         // s = s.RemoveConsecutiveCharacters(' ');
-
         if ( s.EndsWith("  "))
             s = s.Remove( s.Length - 1 );
         _inputComponent.text = s;

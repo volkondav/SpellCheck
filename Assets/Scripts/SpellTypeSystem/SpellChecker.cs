@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
+using Mirror;
 
-public class SpellChecker : MonoBehaviour
+public class SpellChecker : NetworkBehaviour
 {
     [SerializeField] private ScriptableSpellList spellListIce;
     [SerializeField] private ScriptableSpellList spellListFire;
@@ -19,6 +21,8 @@ public class SpellChecker : MonoBehaviour
     
     private void Awake()
     {
+        PlayerSpellEvents.PlayerSpellEventsReference.PlayerCastsASpell.AddListener(CheckSpellName);
+
         spellCaster = GetComponent<SpellCaster>();
 
         _inputComponent = GetComponentInChildren<TMP_InputField>();
@@ -29,6 +33,8 @@ public class SpellChecker : MonoBehaviour
     }
 
     public void CheckSpellName(string spellName){
+        if (!isLocalPlayer)
+            return;
         // print("From CreateSpell: " + spell);
         if ( CheckInList(spellName, spellListIce) )
             return;
@@ -65,7 +71,6 @@ public class SpellChecker : MonoBehaviour
                         print("Could not retrieve valid SpellCharacteristics of: " + spell.name );
                         break;
                 } */
-
                 spellCaster.CastASpell( spell, 1 );
                 _inputComponent.text = "";
                 return true;

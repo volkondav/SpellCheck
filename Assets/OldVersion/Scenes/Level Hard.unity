@@ -972,7 +972,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 2394702166226905191, guid: d692682ec4d8c8144b101b9be4f0e223, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 4372869314271501201, guid: 0c49b4cbf3c3f704880fb8be34ae11ff, type: 3}
   exceptionsDisconnect: 1
   snapshotSettings:
     bufferTimeMultiplier: 2
@@ -3075,7 +3076,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpellChecker, Assembly-CSharp
-        m_MethodName: CheckSpellName
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3841,6 +3842,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae6b2a0ce9234b4195e57a24e53f38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
 --- !u!114 &8750921824313583368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3853,6 +3857,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a094d74699ef4da42a2e2caed476bcec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   CurrentPlatform: {fileID: 0}
   IsAbleToMove: 1
   TimeForOneLetter: 0.4
