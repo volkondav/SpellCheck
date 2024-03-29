@@ -18,6 +18,7 @@ public class SpellCaster : NetworkBehaviour
                 
                 if (isClientOnly)
                 {
+                    direction = -direction; // чтобы спелы правого игрока летели влево
                     uint assetId = spellToCast.GetComponent<NetworkIdentity>().assetId;
                     CmdSpawnSpell(assetId, direction );
                 }
